@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>음악심리치료 트랙 | 음악치료학과</title>
+<style>
+:root {
+  --blue:    #4A7C9E;
+  --blue-dk: #2e5975;
+  --blue-lt: #e8f2f9;
+  --blue-md: #c2d8ea;
+  --teal:    #5a9a8c;
+  --teal-lt: #e4f2ef;
+  --gray:    #f4f7fb;
+  --border:  #d4e2ec;
+  --text:    #1a1a2e;
+  --muted:   #6b7b8d;
+  --white:   #fff;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Malgun Gothic','맑은 고딕',sans-serif;color:var(--text);background:#f8fafd;font-size:17px;line-height:1.8;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:var(--blue-dk);display:flex;align-items:center;gap:2px;padding:0 24px;height:50px;box-shadow:0 2px 12px rgba(0,0,0,.18);}
+nav a{color:rgba(255,255,255,.9);text-decoration:none;font-size:13px;font-weight:bold;padding:6px 14px;border-radius:20px;transition:.2s;}
+nav a:hover{background:rgba(255,255,255,.15);color:#fff;}
+.nav-brand{color:#fff;font-weight:bold;font-size:14px;margin-right:auto;}
+
+/* ── HERO ── */
+.hero{background:#ffffff;color:var(--text);padding:72px 24px 0;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid #eef2f7;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 0%,rgba(106,175,155,.10) 0%,transparent 65%),radial-gradient(ellipse at 15% 90%,rgba(74,124,158,.07) 0%,transparent 55%);}
+.hero-dept{font-size:14px;color:var(--blue);letter-spacing:1px;margin-bottom:14px;font-weight:bold;}
+.hero-track-name{font-size:clamp(38px,7vw,68px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:8px;}
+.hero-track-name .track-ko{color:var(--blue-dk);}
+.hero-track-name .track-accent{
+  color:transparent;
+  background:linear-gradient(90deg,var(--teal),var(--blue));
+  -webkit-background-clip:text;background-clip:text;
+  display:block;font-size:clamp(34px,6vw,58px);
+}
+.hero-track-sub{font-size:14px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;}
+.hero-desc{font-size:16px;color:#444;max-width:520px;margin:0 auto 36px;line-height:1.9;}
+.hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-pill{padding:8px 20px;border-radius:24px;font-size:13px;font-weight:bold;border:1.5px solid;}
+.hero-strengths{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-strength{display:flex;align-items:center;gap:8px;background:rgba(74,124,158,.07);border:1px solid rgba(74,124,158,.18);border-radius:8px;padding:10px 18px;}
+.hs-icon{color:var(--blue);font-size:12px;}
+.hs-text{font-size:14px;font-weight:bold;color:var(--blue-dk);}
+.pill-blue  {border-color:var(--blue);color:var(--blue);background:rgba(74,124,158,.07);}
+.pill-green {border-color:var(--teal);color:var(--teal);background:rgba(58,158,143,.07);}
+.pill-purple{border-color:var(--purple);color:var(--purple);background:rgba(155,126,200,.07);}
+.hero-stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;border-top:1px solid #e8eef5;background:#f7fafd;margin:0 -24px;}
+.stat{text-align:center;padding:20px 28px;border-right:1px solid #e0e8f0;flex:1;min-width:120px;}
+.stat:last-child{border-right:none;}
+.stat-num{font-size:26px;font-weight:900;color:var(--blue);}
+.stat-label{font-size:12px;color:var(--muted);margin-top:3px;}
+
+/* ── SECTION ── */
+section{padding:64px 24px;max-width:1000px;margin:0 auto;}
+.section-tag{display:inline-block;background:var(--blue-lt);color:var(--blue-dk);font-size:13px;font-weight:bold;padding:3px 12px;border-radius:12px;letter-spacing:.5px;margin-bottom:10px;}
+h2{font-size:clamp(24px,3vw,30px);font-weight:900;color:var(--blue-dk);margin-bottom:6px;}
+.subtitle{color:var(--muted);font-size:16px;margin-bottom:36px;}
+
+/* ── CERTS ── */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+.cert-card{border-radius:12px;padding:22px 20px;text-align:left;border:1.5px solid var(--border);background:#fff;cursor:default;transition:.2s;}
+.cert-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(46,89,117,.10);}
+.cert-card h3{font-size:15px;font-weight:bold;margin-bottom:6px;line-height:1.4;color:var(--blue-dk);}
+.cert-card p{font-size:13px;color:var(--muted);}
+.cert-card .cert-badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;margin-top:10px;font-weight:bold;background:var(--blue-lt);color:var(--blue-dk);}
+.badge-private {background:#e8f2f9;color:#2e5975;}
+.badge-national {background:#dce9f2;color:#1e4060;border:1px solid #b8cedf;}
+.badge-intl    {background:var(--teal-lt);color:var(--teal);border:1px solid #b8d8d2;}
+.badge-assoc   {background:#eaf2ee;color:#3a6b55;border:1px solid #b8d4c4;}
+.cert-group-label{font-size:12px;font-weight:bold;color:var(--blue-dk);letter-spacing:.5px;margin-bottom:14px;padding-left:10px;border-left:3px solid var(--blue);line-height:1.2;}
+.cert-group-section{border-radius:12px;padding:22px 24px;margin-top:16px;}
+.cert-group-section:first-child{background:var(--blue-lt);}
+.cert-group-section:nth-child(2){background:var(--teal-lt);}
+.cert-group-section:nth-child(3){background:#f5f5f8;}
+.c1,.c2,.c3,.c4,.c5{}
+
+/* ── CURRICULUM TABLE ── */
+.curr-wrap{overflow-x:auto;width:100%;}
+.curr-table{border-collapse:collapse;width:100%;min-width:680px;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.08);border-radius:12px;overflow:hidden;}
+.curr-table caption{background:var(--blue-dk);color:#fff;font-size:15px;font-weight:bold;padding:13px 16px;text-align:center;letter-spacing:.4px;}
+.curr-table td{border:1px solid #ccdce8;padding:10px 13px;text-align:center;font-size:14px;vertical-align:middle;line-height:1.65;}
+.ct-hdr{background:var(--blue-dk);color:#fff;font-weight:bold;font-size:14px;}
+.ct-lbl{background:#ddeaf5;color:#2d5a7e;font-weight:bold;font-size:14px;}
+.ct-sub{background:#d6ede6;color:#2e6b5a;font-weight:bold;font-size:13px;}
+.ct-req {background:#fafcff;}
+.ct-req2{background:#f0f6fb;}
+.ct-mus {background:#fff9f4;}
+.ct-dev {background:#f2fcf8;}
+.ct-psy {background:#f8f4ff;}
+.ct-com {background:#fffce8;}
+.ct-ths {background:#f0f8f5;}
+.curr-table td[contenteditable="true"]:hover{background:#e8f3ff!important;}
+.curr-table td[contenteditable="true"]:focus{outline:none;background:#d8eaff!important;box-shadow:inset 0 0 0 2px var(--blue);border-radius:3px;}
+
+/* ── TRACK EXPLORER ── */
+.track-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.track-btn{padding:9px 22px;border-radius:6px;border:1.5px solid var(--border);font-size:15px;font-weight:bold;cursor:pointer;background:#fff;color:var(--muted);transition:.2s;font-family:inherit;}
+.track-btn:hover{border-color:var(--blue);color:var(--blue);}
+.track-btn.active{background:var(--blue-dk);border-color:var(--blue-dk);color:#fff;}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.course-card{border-radius:10px;border:1.5px solid var(--border);background:#fff;padding:18px;transition:.25s;cursor:default;}
+.course-card:hover{box-shadow:0 4px 14px rgba(46,89,117,.10);transform:translateY(-2px);}
+.course-card.dim{opacity:.2;filter:grayscale(.6);}
+.course-card.highlight{border-color:var(--blue);background:var(--blue-lt);}
+.course-area{font-size:11px;font-weight:bold;padding:2px 9px;border-radius:4px;display:inline-block;margin-bottom:10px;background:var(--blue-lt);color:var(--blue-dk);}
+.area-req,.area-music,.area-dev,.area-psych,.area-common{background:var(--blue-lt);color:var(--blue-dk);}
+.area-dev  {background:var(--teal-lt);color:var(--teal);}
+.course-card h4{font-size:15px;font-weight:bold;margin-bottom:5px;color:var(--text);}
+.course-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.cert-link{font-size:11px;font-weight:bold;margin-top:8px;padding:3px 9px;border-radius:4px;display:inline-block;background:var(--teal-lt);color:var(--teal);}
+.cl-psy{background:var(--blue-lt);color:var(--blue-dk);}
+.cl-dev,.cl-gim,.cl-kac,.cl-inj,.cl-mus{background:var(--teal-lt);color:var(--teal);}
+
+/* ── FACULTY ── */
+.faculty-group-title{font-size:14px;font-weight:bold;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1.5px solid var(--border);}
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:36px;}
+.faculty-card{background:#fff;border-radius:10px;border:1.5px solid var(--border);padding:20px;transition:.2s;}
+.faculty-card:hover{box-shadow:0 4px 16px rgba(46,89,117,.10);transform:translateY(-2px);}
+.fc-top{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.fc-avatar{display:none;}
+.av-blue,.av-green{display:none;}
+.fc-name{font-size:17px;font-weight:bold;color:var(--blue-dk);}
+.fc-role{font-size:13px;color:var(--muted);margin-top:1px;}
+.fc-role-badge{display:none;}
+.fc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.fc-tag{font-size:12px;background:var(--teal-lt);color:var(--teal);padding:4px 9px;border-radius:4px;}
+.fc-tag.position{background:#f3f0f8;color:#6b52a0;}
+.fc-desc{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;}
+
+/* ── CREDITS ── */
+.credit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.credit-card{border-radius:14px;padding:28px;background:#fff;border:2px solid #dde8f4;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.credit-card h3{font-size:17px;font-weight:bold;color:var(--blue-dk);margin-bottom:12px;}
+.credit-num{font-size:42px;font-weight:900;color:var(--blue);}
+.credit-num sub{font-size:16px;color:var(--muted);}
+.credit-desc{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.6;}
+.credit-plus{display:inline-block;background:var(--green-lt);color:var(--teal);font-size:13px;font-weight:bold;padding:3px 10px;border-radius:10px;margin-top:10px;}
+@media(max-width:600px){.credit-grid{grid-template-columns:1fr;}.roadmap{grid-template-columns:1fr;}.roadmap::before{display:none;}}
+
+/* ── FOOTER ── */
+footer{background:var(--blue-dk);color:rgba(255,255,255,.7);text-align:center;padding:28px;font-size:12px;}
+footer strong{color:#fff;}
+
+/* ── MISC ── */
+.divider{height:1px;background:var(--border);margin:0;}
+.section-alt{background:#fff;}
+.inner{max-width:1000px;margin:0 auto;padding:64px 24px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">음악치료학과</span>
+  <a href="#certs">자격증</a>
+  <a href="#roadmap">교과과정</a>
+  <a href="#tracks">과목안내</a>
+  <a href="#faculty">교수진</a>
+  <a href="zh.html" style="margin-left:12px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 14px;font-size:12px;letter-spacing:.5px;">🇨🇳 中文</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-dept">음악치료학과 · 석사과정</div>
+  <div class="hero-track-name">
+    <span class="track-ko">음악심리치료</span>
+    <span class="track-accent">트랙</span>
+  </div>
+  <div class="hero-track-sub">Music Psychotherapy Track</div>
+  <p class="hero-desc">근거기반 음악치료를 바탕으로 한 음악심리치료 심화 전공 트랙.<br>이론·연구·실습·자격증 취득까지 하나의 과정으로 완성됩니다.</p>
+  <div class="hero-strengths">
+    <div class="hero-strength" style="background:rgba(90,154,140,.10);border-color:rgba(90,154,140,.30);">
+      <div class="hs-icon" style="color:var(--teal);">★</div>
+      <div class="hs-text" style="color:var(--teal);">국내 최초 Bonny GIM Level 1 정규과정</div>
+    </div>
+    <div class="hero-strength">
+      <div class="hs-icon">◆</div>
+      <div class="hs-text">한 과정으로 다양한 자격증 동시 준비</div>
+    </div>
+    <div class="hero-strength">
+      <div class="hs-icon">●</div>
+      <div class="hs-text">박사·국제자격 보유 임상가 직접 지도</div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">학차 커리큘럼</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">취득 가능 자격증</div></div>
+    <div class="stat"><div class="stat-num">24·30+</div><div class="stat-label">이수 학점</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">임상 실습 포함</div></div>
+  </div>
+</div>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="section-tag">CERTIFICATIONS</div>
+  <h2>음악심리치료 트랙 과정에서 취득 및 준비할 수 있는 자격증</h2>
+  <p class="subtitle">하나의 석사과정으로 다양한 자격증을 동시에 준비할 수 있습니다.</p>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label">주요 자격증</div>
+    <div class="cert-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="cert-card">
+        <h3>음악심리상담사</h3>
+        <p>전체 교과과정이 민간자격 취득을 위한 과정으로 설계됨</p>
+        <div class="cert-badge badge-private">민간자격</div>
+      </div>
+      <div class="cert-card">
+        <h3>음악재활사</h3>
+        <p>지정 6과목 포함 21학점 이수 시 인증 조건 충족</p>
+        <div class="cert-badge badge-national">국가 인증</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label" style="border-left-color:var(--teal);color:var(--teal);">연계 자격증</div>
+    <div class="cert-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="cert-card">
+        <h3>GIM Level 1 수료</h3>
+        <p>Bonny Method 국제자격증 취득을 위한 기초 단계 이수</p>
+        <div class="cert-badge badge-intl">국제자격</div>
+      </div>
+      <div class="cert-card">
+        <h3>KAC 코치</h3>
+        <p>코칭상담 이론과 실제 과목을 통해 KAC 자격과 연계</p>
+        <div class="cert-badge badge-assoc">한국코치협회(KCA) 인증</div>
+      </div>
+      <div class="cert-card">
+        <h3>인지학습상담사</h3>
+        <p>장애아동의이해 과목 이수 시 자격 취득 연계</p>
+        <div class="cert-badge badge-private">민간자격</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label" style="border-left-color:#8899aa;color:#556677;">추가 준비 가능 자격증</div>
+    <div class="cert-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="cert-card">
+        <h3>임상심리사</h3>
+        <p>심리상담 및 임상 교과목 이수를 통해 준비 가능한 자격증</p>
+        <div class="cert-badge badge-national">국가자격</div>
+      </div>
+      <div class="cert-card">
+        <h3>청소년상담사</h3>
+        <p>발달심리학, 심리상담 등 관련 교과목 이수를 통해 준비 가능</p>
+        <div class="cert-badge badge-national">국가자격</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROADMAP -->
+<div class="section-alt">
+<div class="inner" id="roadmap">
+  <div class="section-tag">5-SEMESTER ROADMAP</div>
+  <h2>5학차 교과과정 로드맵</h2>
+  <p class="subtitle">석사과정 5학차 교과과정입니다. 논문트랙 24학점 이상 · 학점트랙 30학점 이상 이수 가능합니다.</p>
+  <div class="curr-wrap">
+  <table class="curr-table">
+    <caption>석사과정&nbsp;&nbsp;5학차&nbsp;&nbsp;교과과정&nbsp;&nbsp;（논문트랙: 24학점+논문 &nbsp;/&nbsp; 학점트랙: 30학점）</caption>
+    <tbody>
+      <!-- 학차 헤더 -->
+      <tr>
+        <td colspan="2" class="ct-hdr">학&nbsp;&nbsp;차</td>
+        <td class="ct-hdr">1학차</td>
+        <td class="ct-hdr">2학차</td>
+        <td class="ct-hdr">3학차</td>
+        <td class="ct-hdr">4학차</td>
+        <td class="ct-hdr">5학차</td>
+      </tr>
+      <!-- 전공필수 행 1 -->
+      <tr>
+        <td rowspan="2" class="ct-lbl">전공&nbsp;필수</td>
+        <td class="ct-lbl" style="font-weight:normal;background:#eef4fb;"></td>
+        <td class="ct-req">음악심리치료기술</td>
+        <td class="ct-req">임상실습 1</td>
+        <td class="ct-req">임상실습 2</td>
+        <td class="ct-req">GIM Level 1</td>
+        <td class="ct-req">인턴십</td>
+      </tr>
+      <!-- 전공필수 행 2 -->
+      <tr>
+        <td class="ct-lbl" style="font-weight:normal;background:#eef4fb;"></td>
+        <td colspan="2" class="ct-req2">음악치료개론</td>
+        <td colspan="3" class="ct-req2">음악치료철학</td>
+      </tr>
+      <!-- 전공선택 – 음악치료 -->
+      <tr>
+        <td rowspan="3" class="ct-lbl">전공<br>선택</td>
+        <td class="ct-sub">음악치료</td>
+        <td colspan="5" class="ct-mus">인간행동과음악,&nbsp; 성인음악치료,&nbsp; 음악심리치료,&nbsp; 즉흥연주치료기술,&nbsp; 치료음악기술,&nbsp; 연구방법론*</td>
+      </tr>
+      <!-- 전공선택 – 발달재활 필수 -->
+      <tr>
+        <td class="ct-sub">발달재활 필수</td>
+        <td colspan="5" class="ct-dev">장애아동음악치료,&nbsp; 장애아동의이해</td>
+      </tr>
+      <!-- 전공선택 – 심리상담 -->
+      <tr>
+        <td class="ct-sub">심리상담</td>
+        <td colspan="5" class="ct-psy">심리상담,&nbsp; 이상심리학,&nbsp; 발달심리학<br>심리측정 및 평가,&nbsp; 집단상담,&nbsp; 코칭상담이론과실제</td>
+      </tr>
+      <!-- 공통교과 -->
+      <tr>
+        <td colspan="2" class="ct-lbl">공통&nbsp;교과</td>
+        <td colspan="5" class="ct-com">기초통계학</td>
+      </tr>
+      <!-- 논문트랙 -->
+      <tr>
+        <td colspan="2" class="ct-lbl">논문&nbsp;트랙</td>
+        <td colspan="2" class="ct-ths" style="color:#aaa;">–</td>
+        <td colspan="2" class="ct-ths">연구계획서 작성<br>IRB 교육이수</td>
+        <td class="ct-ths">논문&nbsp;작성</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+
+<!-- TRACK EXPLORER -->
+<section id="tracks">
+  <div class="section-tag">COURSE EXPLORER</div>
+  <h2>교과목 탐색</h2>
+  <p class="subtitle">관심 있는 교과를 선택하면 관련 과목이 강조됩니다.</p>
+
+  <div class="track-btns">
+    <button class="track-btn tb-all  active" onclick="filterTrack('all')">전체 보기</button>
+    <button class="track-btn tb-psy  "       onclick="filterTrack('psy')">음악심리상담사 필수 교과</button>
+    <button class="track-btn tb-dev  "       onclick="filterTrack('dev')">음악재활사 필수 교과</button>
+    <button class="track-btn tb-cert "       onclick="filterTrack('cert')">연계 자격증 교과</button>
+  </div>
+
+  <div class="course-grid" id="courseGrid">
+
+    <!-- 전공 필수 -->
+    <div class="course-card" data-track="dev req psy">
+      <span class="course-area area-req">전공필수</span>
+      <h4>음악심리치료기술</h4>
+      <p>음악을 활용한 심리치료의 기초 기술과 적용 방법 습득. 치료사의 핵심 역량을 형성합니다.</p>
+      <span class="cert-link cl-psy">음악심리상담사 필수</span>
+      <span class="cert-link cl-dev" style="margin-left:4px;">발달재활사 필수</span>
+    </div>
+    <div class="course-card" data-track="dev req psy">
+      <span class="course-area area-req">전공필수</span>
+      <h4>임상실습 1·2</h4>
+      <p>실제 현장에서의 치료 경험을 통해 이론을 실천으로 연결합니다.</p>
+      <span class="cert-link cl-psy">음악심리상담사 필수</span>
+      <span class="cert-link cl-dev" style="margin-left:4px;">발달재활사 필수</span>
+    </div>
+    <div class="course-card" data-track="req cert" style="border-color:var(--teal);background:linear-gradient(135deg,#f0faf7 0%,#fff 100%);">
+      <span class="course-area area-req">전공필수</span>
+      <span style="display:inline-block;background:var(--teal);color:#fff;font-size:10px;font-weight:bold;padding:2px 8px;border-radius:20px;margin-bottom:6px;letter-spacing:0.5px;">★ 국내 최초 도입</span>
+      <h4>GIM Level 1</h4>
+      <p>Bonny Method of Guided Imagery and Music 국제 공인 교육과정. <strong>국내 대학원 최초로 정규 교과목으로 편성</strong>된 GIM 입문 과정으로, 국제자격증 취득의 첫 단계입니다.</p>
+      <span class="cert-link cl-gim">국제자격 연계</span>
+    </div>
+    <div class="course-card" data-track="dev req psy">
+      <span class="course-area area-req">전공필수</span>
+      <h4>인턴십</h4>
+      <p>독립적인 치료사로 성장하기 위한 종합 실무 경험. 모든 역량을 통합적으로 발휘합니다.</p>
+      <span class="cert-link cl-psy">음악심리상담사 필수</span>
+      <span class="cert-link cl-dev" style="margin-left:4px;">발달재활사 필수</span>
+    </div>
+    <div class="course-card" data-track="req psy">
+      <span class="course-area area-req">전공필수</span>
+      <h4>음악치료개론</h4>
+      <p>음악치료의 역사, 이론적 모델, 실천 방법에 대한 포괄적 이해를 형성합니다.</p>
+      <span class="cert-link cl-psy">음악심리상담사 필수</span>
+    </div>
+    <div class="course-card" data-track="req">
+      <span class="course-area area-req">전공필수</span>
+      <h4>음악치료철학</h4>
+      <p>음악치료의 철학적 기반과 윤리적 사고 능력을 심화합니다.</p>
+    </div>
+
+    <!-- 음악치료 영역 -->
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">음악치료</span>
+      <h4>인간행동과음악</h4>
+      <p>음악이 인간의 정서·인지·사회·신체에 미치는 영향에 대한 과학적 이해와 근거 기반 접근.</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">음악치료</span>
+      <h4>성인음악치료</h4>
+      <p>성인 및 노인을 대상으로 한 음악 기반 치료와 신경학적 접근 방법을 학습합니다.</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">음악치료</span>
+      <h4>음악심리치료</h4>
+      <p>심리치료 및 코칭 관점에서의 음악 활용 이론과 실제. 이 트랙의 핵심 과목입니다.</p>
+      <span class="cert-link cl-mus">트랙 핵심</span>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">음악치료</span>
+      <h4>즉흥연주치료기술</h4>
+      <p>언어가 통하지 않는 내담자와 음악으로 소통하는 기술. 치료 상황의 즉흥 음악 적용 능력을 훈련합니다.</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">음악치료</span>
+      <h4>치료음악기술</h4>
+      <p>음악기술은 임상 현장에서 활용되는 기본적인 악기 연주 능력으로, 기타와 피아노를 중심으로 치료적 개입에 필요한 기초 연주 기술을 익힙니다.</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">음악치료</span>
+      <h4>연구방법론 ★</h4>
+      <p>음악치료 분야의 연구 설계, 데이터 분석, 학문적 접근법을 체계적으로 학습합니다.</p>
+    </div>
+
+    <!-- 발달재활 필수 -->
+    <div class="course-card" data-track="dev">
+      <span class="course-area area-dev">발달재활 필수</span>
+      <h4>장애아동음악치료</h4>
+      <p>장애 아동 대상 음악 기반 치료 기법을 심화합니다. 현장 직결 실무 과목.</p>
+      <span class="cert-link cl-dev">발달재활사 필수</span>
+    </div>
+    <div class="course-card" data-track="dev cert">
+      <span class="course-area area-dev">발달재활 필수</span>
+      <h4>장애아동의이해</h4>
+      <p>장애 아동의 발달 특성과 심리·행동에 대한 깊은 이해. 인지학습상담사 자격과 연계됩니다.</p>
+      <span class="cert-link cl-dev">발달재활사 필수</span>
+      <span class="cert-link cl-inj" style="margin-left:4px;">인지학습상담사 연계</span>
+    </div>
+
+    <!-- 심리상담 영역 -->
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">심리상담</span>
+      <h4>심리상담</h4>
+      <p>상담 이론을 바탕으로 인간의 심리 문제를 이해하고 개입하는 과정을 학습합니다.</p>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">심리상담</span>
+      <h4>이상심리학</h4>
+      <p>정신장애와 이상행동의 원인, 증상, 진단 기준을 체계적으로 이해합니다.</p>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">심리상담</span>
+      <h4>발달심리학</h4>
+      <p>인간의 전 생애에 걸친 신체·인지·사회·정서 발달을 연구하는 심리학 분야.</p>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">심리상담</span>
+      <h4>심리측정 및 평가</h4>
+      <p>심리검사 도구를 활용해 개인의 심리 특성을 객관적으로 이해하는 능력을 배양합니다.</p>
+    </div>
+    <div class="course-card" data-track="psych cert">
+      <span class="course-area area-psych">심리상담</span>
+      <h4>코칭상담 이론과 실제</h4>
+      <p>코칭 기법을 활용해 목표 설정과 성장을 돕습니다. KAC 코치 자격 취득과 연계됩니다.</p>
+      <span class="cert-link cl-kac">KAC 코치 연계</span>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">심리상담</span>
+      <h4>집단상담</h4>
+      <p>집단 역동을 이해하고 치료적 개입을 수행하는 집단상담의 이론과 실천을 학습합니다.</p>
+    </div>
+
+    <!-- 공통 -->
+    <div class="course-card" data-track="common">
+      <span class="course-area area-common">공통교과</span>
+      <h4>기초통계학</h4>
+      <p>연구 및 데이터 분석을 위한 통계적 사고와 방법론의 기초를 다집니다.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FACULTY -->
+<section id="faculty">
+  <div class="section-tag">FACULTY</div>
+  <h2>교수진 소개</h2>
+  <p class="subtitle">박사학위와 독보적인 국제 자격을 보유한 베테랑 임상가들이 직접 지도합니다.</p>
+
+  <!-- 음악치료 교수진 -->
+  <div class="faculty-group-title">음악치료 교수진</div>
+  <div class="faculty-grid">
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">이</div>
+        <div>
+          <div class="fc-name">이상은</div>
+          <div class="fc-role">주임교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">Bonny GIM Fellow/Support Trainer</span>
+        <span class="fc-tag special">AMT 전문가</span>
+        <span class="fc-tag special">AVPT</span>
+        <span class="fc-tag">임상음악전문가 1급</span>
+        <span class="fc-tag">KAC 코치</span>
+        <span class="fc-tag position">더클래스아이패밀리상담센터 상담전문가</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">Lesley Univ. 표현예술치료 박사 / Michigan State Univ. 음악치료 석사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">문</div>
+        <div>
+          <div class="fc-name">문정표</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">Bonny GIM Fellow / Primary Trainer</span>
+        <span class="fc-tag special">AVPT</span>
+        <span class="fc-tag">임상음악전문가 1급</span>
+        <span class="fc-tag position">닥터문 심리심상연구소장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">Lesley Univ. 표현예술치료 박사 / Temple Univ. 음악치료 석사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">고</div>
+        <div>
+          <div class="fc-name">고범석</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">NMT® Fellow</span>
+        <span class="fc-tag">임상음악전문가 1급</span>
+        <span class="fc-tag position">임상음악과학연구회 부회장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">한세대학교 음악치료 박사 / 숙명여대 음악치료 석사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">양</div>
+        <div>
+          <div class="fc-name">양은아</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">노도프라빈스 음악치료사 (NRMT)</span>
+        <span class="fc-tag special">Bonny GIM Fellow</span>
+        <span class="fc-tag">임상음악전문가 1급</span>
+        <span class="fc-tag position">숙명여대 초빙교수</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">숙명여대 음악치료 박사 / 석사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">음</div>
+        <div>
+          <div class="fc-name">음승희</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">Bonny GIM Fellow/Support Trainer</span>
+        <span class="fc-tag special">AMT 전문가</span>
+        <span class="fc-tag position">이난복음악치료연구소 부소장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">숙명여대 음악치료 박사수료 / Michigan State Univ. 음악치료 석사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">이</div>
+        <div>
+          <div class="fc-name">이현정</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">미국공인 음악치료사 (MT-BC)</span>
+        <span class="fc-tag special">신경학적 음악치료사 (NMT™)</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">Univ. of Miami 음악치료 박사 / Colorado Univ. 음악치료 석사</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 다학제 교수진 -->
+  <div class="faculty-group-title">다학제 교수진 — 심리상담 · 아동가족 · 인지</div>
+  <div class="faculty-grid">
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">박</div>
+        <div>
+          <div class="fc-name">박혜영</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">청소년상담사 1급</span>
+        <span class="fc-tag">임상심리사 2급</span>
+        <span class="fc-tag">임상음악전문가 1급</span>
+        <span class="fc-tag">인지학습상담 전문가</span>
+        <span class="fc-tag position">참만남인지심리연구소장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">명지대 아동학 박사 / 음악치료 석사</span>
+
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">유</div>
+        <div>
+          <div class="fc-name">유승은</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">청소년상담사 1급</span>
+        <span class="fc-tag">임상심리사 1급</span>
+        <span class="fc-tag">장애인재활상담사 1급</span>
+        <span class="fc-tag">인지학습상담 전문가</span>
+        <span class="fc-tag position">서울시 중랑아이존 시설장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">명지대 아동학 박사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">김</div>
+        <div>
+          <div class="fc-name">김수진</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">정신보건전문요원 2급</span>
+        <span class="fc-tag">상담심리사 2급</span>
+        <span class="fc-tag">사회교육전문요원자격증 1급</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">연세대 심리학 박사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">김</div>
+        <div>
+          <div class="fc-name">김호정</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">청소년상담사 1급</span>
+        <span class="fc-tag">놀이심리상담 수련감독자</span>
+        <span class="fc-tag">모래놀이심리상담 수련감독자</span>
+        <span class="fc-tag position">마음앤발달상담센터장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">이화여대 심리학 박사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">권</div>
+        <div>
+          <div class="fc-name">권려원</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">철학상담사 전문가</span>
+        <span class="fc-tag">전문코치 KPC</span>
+        <span class="fc-tag">5R 코칭리더십 강사</span>
+        <span class="fc-tag">미술심리상담사 1급</span>
+        <span class="fc-tag position">명지대 철학상담치료학과 주임교수</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">명지대 철학 박사</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">백</div>
+        <div>
+          <div class="fc-name">백현주</div>
+          <div class="fc-role">교수</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">임상심리사 1급</span>
+        <span class="fc-tag">청소년상담사 2급</span>
+        <span class="fc-tag">전문상담 2급 정교사</span>
+        <span class="fc-tag">인터넷중독상담사</span>
+        <span class="fc-tag position">홍성창의센터장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">성균관대 심리학 박사</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <strong>음악치료학과 · 음악심리치료 트랙</strong><br>
+  <span style="font-size:11px;margin-top:4px;display:block;">석사과정 교과과정 안내 페이지 · 자세한 사항은 학과 사무실로 문의해주세요.</span>
+  <span style="font-size:11px;margin-top:6px;display:block;color:rgba(255,255,255,0.75);">
+    ☎ 02-300-0795, 0984 &nbsp;|&nbsp; ✉ <a href="mailto:mptlab@naver.com" style="color:rgba(255,255,255,0.85);text-decoration:none;">mptlab@naver.com</a> &nbsp;|&nbsp; <a href="mailto:mei503@mju.ac.kr" style="color:rgba(255,255,255,0.85);text-decoration:none;">mei503@mju.ac.kr</a>
+  </span>
+</footer>
+
+<script>
+function filterTrack(track) {
+  // Update buttons
+  document.querySelectorAll('.track-btn').forEach(b => b.classList.remove('active'));
+  const map = {all:'tb-all', psy:'tb-psy', dev:'tb-dev', cert:'tb-cert'};
+  document.querySelector('.'+map[track]).classList.add('active');
+
+  // Update cards
+  document.querySelectorAll('.course-card').forEach(card => {
+    const t = card.dataset.track || '';
+    if (track === 'all') {
+      card.classList.remove('dim','highlight');
+    } else {
+      const match = t.split(' ').includes(track) || (track==='dev' && t.includes('req') && t.includes('dev'));
+      if (match) {
+        card.classList.remove('dim');
+        card.classList.add('highlight');
+      } else {
+        card.classList.remove('highlight');
+        card.classList.add('dim');
+      }
+    }
+  });
+
+  document.querySelectorAll('.course-card.highlight').forEach(c => {
+    c.style.borderColor = 'var(--blue)';
+    c.style.background  = 'var(--blue-lt)';
+  });
+}
+</script>
+</body>
+</html>

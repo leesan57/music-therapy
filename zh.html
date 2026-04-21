@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>音乐心理治疗方向 | 音乐治疗学系</title>
+<style>
+:root {
+  --blue:    #4A7C9E;
+  --blue-dk: #2e5975;
+  --blue-lt: #e8f2f9;
+  --blue-md: #c2d8ea;
+  --teal:    #5a9a8c;
+  --teal-lt: #e4f2ef;
+  --gray:    #f4f7fb;
+  --border:  #d4e2ec;
+  --text:    #1a1a2e;
+  --muted:   #6b7b8d;
+  --white:   #fff;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'PingFang SC','Microsoft YaHei','微软雅黑',sans-serif;color:var(--text);background:#f8fafd;font-size:17px;line-height:1.8;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:var(--blue-dk);display:flex;align-items:center;gap:2px;padding:0 24px;height:50px;box-shadow:0 2px 12px rgba(0,0,0,.18);}
+nav a{color:rgba(255,255,255,.9);text-decoration:none;font-size:13px;font-weight:bold;padding:6px 14px;border-radius:20px;transition:.2s;}
+nav a:hover{background:rgba(255,255,255,.15);color:#fff;}
+.nav-brand{color:#fff;font-weight:bold;font-size:14px;margin-right:auto;}
+
+/* ── HERO ── */
+.hero{background:#ffffff;color:var(--text);padding:72px 24px 0;text-align:center;position:relative;overflow:hidden;border-bottom:3px solid #eef2f7;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 0%,rgba(106,175,155,.10) 0%,transparent 65%),radial-gradient(ellipse at 15% 90%,rgba(74,124,158,.07) 0%,transparent 55%);}
+.hero-dept{font-size:14px;color:var(--blue);letter-spacing:1px;margin-bottom:14px;font-weight:bold;}
+.hero-track-name{font-size:clamp(38px,7vw,68px);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:8px;}
+.hero-track-name .track-ko{color:var(--blue-dk);}
+.hero-track-name .track-accent{
+  color:transparent;
+  background:linear-gradient(90deg,var(--teal),var(--blue));
+  -webkit-background-clip:text;background-clip:text;
+  display:block;font-size:clamp(34px,6vw,58px);
+}
+.hero-track-sub{font-size:14px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;}
+.hero-desc{font-size:16px;color:#444;max-width:560px;margin:0 auto 36px;line-height:1.9;}
+.hero-strengths{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-strength{display:flex;align-items:center;gap:8px;background:rgba(74,124,158,.07);border:1px solid rgba(74,124,158,.18);border-radius:8px;padding:10px 18px;}
+.hs-icon{color:var(--blue);font-size:12px;}
+.hs-text{font-size:14px;font-weight:bold;color:var(--blue-dk);}
+.hero-stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;border-top:1px solid #e8eef5;background:#f7fafd;margin:0 -24px;}
+.stat{text-align:center;padding:20px 28px;border-right:1px solid #e0e8f0;flex:1;min-width:120px;}
+.stat:last-child{border-right:none;}
+.stat-num{font-size:26px;font-weight:900;color:var(--blue);}
+.stat-label{font-size:12px;color:var(--muted);margin-top:3px;}
+
+/* ── SECTION ── */
+section{padding:64px 24px;max-width:1000px;margin:0 auto;}
+.section-tag{display:inline-block;background:var(--blue-lt);color:var(--blue-dk);font-size:13px;font-weight:bold;padding:3px 12px;border-radius:12px;letter-spacing:.5px;margin-bottom:10px;}
+h2{font-size:clamp(24px,3vw,30px);font-weight:900;color:var(--blue-dk);margin-bottom:6px;}
+.subtitle{color:var(--muted);font-size:16px;margin-bottom:36px;}
+
+/* ── CERTS ── */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+.cert-card{border-radius:12px;padding:22px 20px;text-align:left;border:1.5px solid var(--border);background:#fff;cursor:default;transition:.2s;}
+.cert-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(46,89,117,.10);}
+.cert-card h3{font-size:15px;font-weight:bold;margin-bottom:6px;line-height:1.4;color:var(--blue-dk);}
+.cert-card p{font-size:13px;color:var(--muted);}
+.cert-card .cert-badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;margin-top:10px;font-weight:bold;background:var(--blue-lt);color:var(--blue-dk);}
+.badge-private {background:#e8f2f9;color:#2e5975;}
+.badge-national {background:#dce9f2;color:#1e4060;border:1px solid #b8cedf;}
+.badge-intl    {background:var(--teal-lt);color:var(--teal);border:1px solid #b8d8d2;}
+.badge-assoc   {background:#eaf2ee;color:#3a6b55;border:1px solid #b8d4c4;}
+.cert-group-label{font-size:12px;font-weight:bold;color:var(--blue-dk);letter-spacing:.5px;margin-bottom:14px;padding-left:10px;border-left:3px solid var(--blue);line-height:1.2;}
+.cert-group-section{border-radius:12px;padding:22px 24px;margin-top:16px;}
+.cert-group-section:first-child{background:var(--blue-lt);}
+.cert-group-section:nth-child(2){background:var(--teal-lt);}
+.cert-group-section:nth-child(3){background:#f5f5f8;}
+
+/* ── CURRICULUM TABLE ── */
+.curr-wrap{overflow-x:auto;width:100%;}
+.curr-table{border-collapse:collapse;width:100%;min-width:680px;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.08);border-radius:12px;overflow:hidden;}
+.curr-table caption{background:var(--blue-dk);color:#fff;font-size:15px;font-weight:bold;padding:13px 16px;text-align:center;letter-spacing:.4px;}
+.curr-table td{border:1px solid #ccdce8;padding:10px 13px;text-align:center;font-size:14px;vertical-align:middle;line-height:1.65;}
+.ct-hdr{background:var(--blue-dk);color:#fff;font-weight:bold;font-size:14px;}
+.ct-lbl{background:#ddeaf5;color:#2d5a7e;font-weight:bold;font-size:14px;}
+.ct-sub{background:#d6ede6;color:#2e6b5a;font-weight:bold;font-size:13px;}
+.ct-req {background:#fafcff;}
+.ct-req2{background:#f0f6fb;}
+.ct-mus {background:#fff9f4;}
+.ct-dev {background:#f2fcf8;}
+.ct-psy {background:#f8f4ff;}
+.ct-com {background:#fffce8;}
+.ct-ths {background:#f0f8f5;}
+
+/* ── TRACK EXPLORER ── */
+.track-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.track-btn{padding:9px 22px;border-radius:6px;border:1.5px solid var(--border);font-size:15px;font-weight:bold;cursor:pointer;background:#fff;color:var(--muted);transition:.2s;font-family:inherit;}
+.track-btn:hover{border-color:var(--blue);color:var(--blue);}
+.track-btn.active{background:var(--blue-dk);border-color:var(--blue-dk);color:#fff;}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.course-card{border-radius:10px;border:1.5px solid var(--border);background:#fff;padding:18px;transition:.25s;cursor:default;}
+.course-card:hover{box-shadow:0 4px 14px rgba(46,89,117,.10);transform:translateY(-2px);}
+.course-card.dim{opacity:.2;filter:grayscale(.6);}
+.course-card.highlight{border-color:var(--blue);background:var(--blue-lt);}
+.course-area{font-size:11px;font-weight:bold;padding:2px 9px;border-radius:4px;display:inline-block;margin-bottom:10px;background:var(--blue-lt);color:var(--blue-dk);}
+.area-req,.area-music,.area-dev,.area-psych,.area-common{background:var(--blue-lt);color:var(--blue-dk);}
+.area-dev{background:var(--teal-lt);color:var(--teal);}
+.course-card h4{font-size:15px;font-weight:bold;margin-bottom:5px;color:var(--text);}
+.course-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.cert-link{font-size:11px;font-weight:bold;margin-top:8px;padding:3px 9px;border-radius:4px;display:inline-block;background:var(--teal-lt);color:var(--teal);}
+.cl-psy{background:var(--blue-lt);color:var(--blue-dk);}
+.cl-dev,.cl-gim,.cl-kac,.cl-inj,.cl-mus{background:var(--teal-lt);color:var(--teal);}
+
+/* ── FACULTY ── */
+.faculty-group-title{font-size:14px;font-weight:bold;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1.5px solid var(--border);}
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:36px;}
+.faculty-card{background:#fff;border-radius:10px;border:1.5px solid var(--border);padding:20px;transition:.2s;}
+.faculty-card:hover{box-shadow:0 4px 16px rgba(46,89,117,.10);transform:translateY(-2px);}
+.fc-top{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.fc-avatar{display:none;}
+.fc-name{font-size:17px;font-weight:bold;color:var(--blue-dk);}
+.fc-role{font-size:13px;color:var(--muted);margin-top:1px;}
+.fc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.fc-tag{font-size:12px;background:var(--teal-lt);color:var(--teal);padding:4px 9px;border-radius:4px;}
+.fc-tag.position{background:#f3f0f8;color:#6b52a0;}
+
+/* ── FOOTER ── */
+footer{background:var(--blue-dk);color:rgba(255,255,255,.7);text-align:center;padding:28px;font-size:12px;}
+footer strong{color:#fff;}
+
+/* ── MISC ── */
+.divider{height:1px;background:var(--border);margin:0;}
+.section-alt{background:#fff;}
+.inner{max-width:1000px;margin:0 auto;padding:64px 24px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">音乐治疗学系</span>
+  <a href="#certs">资格证书</a>
+  <a href="#roadmap">课程体系</a>
+  <a href="#tracks">科目介绍</a>
+  <a href="#faculty">师资队伍</a>
+  <a href="index.html" style="margin-left:12px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 14px;font-size:12px;letter-spacing:.5px;">🇰🇷 한국어</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-dept">音乐治疗学系 · 硕士课程</div>
+  <div class="hero-track-name">
+    <span class="track-ko">音乐心理治疗</span>
+    <span class="track-accent">方向</span>
+  </div>
+  <div class="hero-track-sub">Music Psychotherapy Track</div>
+  <p class="hero-desc">以循证音乐治疗为基础的音乐心理治疗深化专业方向。<br>从理论、研究、实习到资格证书取得，一个课程全面完成。</p>
+  <div class="hero-strengths">
+    <div class="hero-strength" style="background:rgba(90,154,140,.10);border-color:rgba(90,154,140,.30);">
+      <div class="hs-icon" style="color:var(--teal);">★</div>
+      <div class="hs-text" style="color:var(--teal);">韩国首个 Bonny GIM Level 1 正规课程</div>
+    </div>
+    <div class="hero-strength">
+      <div class="hs-icon">◆</div>
+      <div class="hs-text">一个课程同时备考多项资格证书</div>
+    </div>
+    <div class="hero-strength">
+      <div class="hs-icon">●</div>
+      <div class="hs-text">博士·国际资质临床医师亲自指导</div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">学期课程体系</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">可取得资格证书</div></div>
+    <div class="stat"><div class="stat-num">24·30+</div><div class="stat-label">修读学分</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">含临床实习</div></div>
+  </div>
+</div>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="section-tag">CERTIFICATIONS</div>
+  <h2>音乐心理治疗方向可取得及备考的资格证书</h2>
+  <p class="subtitle">通过一个硕士课程，可同时备考多项资格证书。</p>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label">主要资格证书</div>
+    <div class="cert-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="cert-card">
+        <h3>音乐心理咨询师</h3>
+        <p>整体课程体系专为取得该民间资格证书而设计</p>
+        <div class="cert-badge badge-private">民间资格</div>
+      </div>
+      <div class="cert-card">
+        <h3>音乐康复师</h3>
+        <p>修读包含指定6门课程的21学分后满足认证条件</p>
+        <div class="cert-badge badge-national">国家认证</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label" style="border-left-color:var(--teal);color:var(--teal);">关联资格证书</div>
+    <div class="cert-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="cert-card">
+        <h3>GIM Level 1 结业</h3>
+        <p>取得 Bonny Method 国际资格证书的基础阶段修读</p>
+        <div class="cert-badge badge-intl">国际资格</div>
+      </div>
+      <div class="cert-card">
+        <h3>KAC 教练</h3>
+        <p>通过"教练咨询理论与实践"课程与 KAC 资格相关联</p>
+        <div class="cert-badge badge-assoc">韩国教练协会(KCA)认证</div>
+      </div>
+      <div class="cert-card">
+        <h3>认知学习咨询师</h3>
+        <p>修读"障碍儿童的理解"课程后可关联取得资格</p>
+        <div class="cert-badge badge-private">民间资格</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label" style="border-left-color:#8899aa;color:#556677;">可额外备考的资格证书</div>
+    <div class="cert-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="cert-card">
+        <h3>临床心理师</h3>
+        <p>通过修读心理咨询及临床相关课程可备考的资格证书</p>
+        <div class="cert-badge badge-national">国家资格</div>
+      </div>
+      <div class="cert-card">
+        <h3>青少年咨询师</h3>
+        <p>通过修读发展心理学、心理咨询等相关课程可备考</p>
+        <div class="cert-badge badge-national">国家资格</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROADMAP -->
+<div class="section-alt">
+<div class="inner" id="roadmap">
+  <div class="section-tag">5-SEMESTER ROADMAP</div>
+  <h2>5学期课程体系</h2>
+  <p class="subtitle">硕士课程5学期课程体系。论文方向24学分以上 · 学分方向30学分以上可修读。</p>
+  <div class="curr-wrap">
+  <table class="curr-table">
+    <caption>硕士课程&nbsp;&nbsp;5学期&nbsp;&nbsp;课程体系&nbsp;&nbsp;（论文方向: 24学分+论文 &nbsp;/&nbsp; 学分方向: 30学分）</caption>
+    <tbody>
+      <tr>
+        <td colspan="2" class="ct-hdr">学&nbsp;&nbsp;期</td>
+        <td class="ct-hdr">第1学期</td>
+        <td class="ct-hdr">第2学期</td>
+        <td class="ct-hdr">第3学期</td>
+        <td class="ct-hdr">第4学期</td>
+        <td class="ct-hdr">第5学期</td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="ct-lbl">专业<br>必修</td>
+        <td class="ct-lbl" style="font-weight:normal;background:#eef4fb;"></td>
+        <td class="ct-req">音乐心理治疗技术</td>
+        <td class="ct-req">临床实习 1</td>
+        <td class="ct-req">临床实习 2</td>
+        <td class="ct-req">GIM Level 1</td>
+        <td class="ct-req">实习</td>
+      </tr>
+      <tr>
+        <td class="ct-lbl" style="font-weight:normal;background:#eef4fb;"></td>
+        <td colspan="2" class="ct-req2">音乐治疗概论</td>
+        <td colspan="3" class="ct-req2">音乐治疗哲学</td>
+      </tr>
+      <tr>
+        <td rowspan="3" class="ct-lbl">专业<br>选修</td>
+        <td class="ct-sub">音乐治疗</td>
+        <td colspan="5" class="ct-mus">人类行为与音乐,&nbsp; 成人音乐治疗,&nbsp; 音乐心理治疗,&nbsp; 即兴演奏治疗技术,&nbsp; 治疗音乐技术,&nbsp; 研究方法论*</td>
+      </tr>
+      <tr>
+        <td class="ct-sub">发育康复必修</td>
+        <td colspan="5" class="ct-dev">障碍儿童音乐治疗,&nbsp; 障碍儿童的理解</td>
+      </tr>
+      <tr>
+        <td class="ct-sub">心理咨询</td>
+        <td colspan="5" class="ct-psy">心理咨询,&nbsp; 异常心理学,&nbsp; 发展心理学<br>心理测量与评估,&nbsp; 团体咨询,&nbsp; 教练咨询理论与实践</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="ct-lbl">公共&nbsp;课程</td>
+        <td colspan="5" class="ct-com">基础统计学</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="ct-lbl">论文&nbsp;方向</td>
+        <td colspan="2" class="ct-ths" style="color:#aaa;">–</td>
+        <td colspan="2" class="ct-ths">研究计划书撰写<br>IRB 教育修读</td>
+        <td class="ct-ths">论文&nbsp;撰写</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+
+<!-- TRACK EXPLORER -->
+<section id="tracks">
+  <div class="section-tag">COURSE EXPLORER</div>
+  <h2>课程探索</h2>
+  <p class="subtitle">选择感兴趣的类别，相关课程将被高亮显示。</p>
+
+  <div class="track-btns">
+    <button class="track-btn tb-all active" onclick="filterTrack('all')">全部显示</button>
+    <button class="track-btn tb-psy"        onclick="filterTrack('psy')">音乐心理咨询师必修课程</button>
+    <button class="track-btn tb-dev"        onclick="filterTrack('dev')">音乐康复师必修课程</button>
+    <button class="track-btn tb-cert"       onclick="filterTrack('cert')">关联资格证书课程</button>
+  </div>
+
+  <div class="course-grid" id="courseGrid">
+
+    <!-- 专业必修 -->
+    <div class="course-card" data-track="dev req psy">
+      <span class="course-area area-req">专业必修</span>
+      <h4>音乐心理治疗技术</h4>
+      <p>学习运用音乐进行心理治疗的基础技术与应用方法，培养治疗师的核心能力。</p>
+      <span class="cert-link cl-psy">音乐心理咨询师必修</span>
+      <span class="cert-link cl-dev" style="margin-left:4px;">音乐康复师必修</span>
+    </div>
+    <div class="course-card" data-track="dev req psy">
+      <span class="course-area area-req">专业必修</span>
+      <h4>临床实习 1·2</h4>
+      <p>通过真实现场的治疗经验，将理论与实践相结合。</p>
+      <span class="cert-link cl-psy">音乐心理咨询师必修</span>
+      <span class="cert-link cl-dev" style="margin-left:4px;">音乐康复师必修</span>
+    </div>
+    <div class="course-card" data-track="req cert" style="border-color:var(--teal);background:linear-gradient(135deg,#f0faf7 0%,#fff 100%);">
+      <span class="course-area area-req">专业必修</span>
+      <span style="display:inline-block;background:var(--teal);color:#fff;font-size:10px;font-weight:bold;padding:2px 8px;border-radius:20px;margin-bottom:6px;letter-spacing:0.5px;">★ 韩国首次引入</span>
+      <h4>GIM Level 1</h4>
+      <p>Bonny Method of Guided Imagery and Music 国际认证课程。<strong>韩国大学院首次将其列为正规课程</strong>，是取得国际资格证书的第一步。</p>
+      <span class="cert-link cl-gim">国际资格关联</span>
+    </div>
+    <div class="course-card" data-track="dev req psy">
+      <span class="course-area area-req">专业必修</span>
+      <h4>实习</h4>
+      <p>成长为独立治疗师的综合实务经验，全面整合运用所有能力。</p>
+      <span class="cert-link cl-psy">音乐心理咨询师必修</span>
+      <span class="cert-link cl-dev" style="margin-left:4px;">音乐康复师必修</span>
+    </div>
+    <div class="course-card" data-track="req psy">
+      <span class="course-area area-req">专业必修</span>
+      <h4>音乐治疗概论</h4>
+      <p>形成对音乐治疗历史、理论模型、实践方法的全面理解。</p>
+      <span class="cert-link cl-psy">音乐心理咨询师必修</span>
+    </div>
+    <div class="course-card" data-track="req">
+      <span class="course-area area-req">专业必修</span>
+      <h4>音乐治疗哲学</h4>
+      <p>深化音乐治疗的哲学基础与伦理思维能力。</p>
+    </div>
+
+    <!-- 音乐治疗领域 -->
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">音乐治疗</span>
+      <h4>人类行为与音乐</h4>
+      <p>科学理解音乐对人类情绪、认知、社会、身体的影响及循证方法。</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">音乐治疗</span>
+      <h4>成人音乐治疗</h4>
+      <p>学习针对成人及老年人的音乐治疗与神经学方法。</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">音乐治疗</span>
+      <h4>音乐心理治疗</h4>
+      <p>从心理治疗及教练视角学习音乐运用的理论与实践，是本方向的核心课程。</p>
+      <span class="cert-link cl-mus">方向核心</span>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">音乐治疗</span>
+      <h4>即兴演奏治疗技术</h4>
+      <p>学习通过音乐与语言不通的来访者沟通的技术，训练治疗场合的即兴音乐应用能力。</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">音乐治疗</span>
+      <h4>治疗音乐技术</h4>
+      <p>治疗音乐技术是指在临床现场中运用的基本乐器演奏能力，以吉他和钢琴为中心，学习治疗介入所需的基础演奏技术。</p>
+    </div>
+    <div class="course-card" data-track="music">
+      <span class="course-area area-music">音乐治疗</span>
+      <h4>研究方法论 ★</h4>
+      <p>系统学习音乐治疗领域的研究设计、数据分析及学术研究方法。</p>
+    </div>
+
+    <!-- 发育康复必修 -->
+    <div class="course-card" data-track="dev">
+      <span class="course-area area-dev">发育康复必修</span>
+      <h4>障碍儿童音乐治疗</h4>
+      <p>深化针对障碍儿童的音乐治疗技法，与实践现场直接衔接的实务课程。</p>
+      <span class="cert-link cl-dev">音乐康复师必修</span>
+    </div>
+    <div class="course-card" data-track="dev cert">
+      <span class="course-area area-dev">发育康复必修</span>
+      <h4>障碍儿童的理解</h4>
+      <p>深入理解障碍儿童的发育特性及心理行为，与认知学习咨询师资格相关联。</p>
+      <span class="cert-link cl-dev">音乐康复师必修</span>
+      <span class="cert-link cl-inj" style="margin-left:4px;">认知学习咨询师关联</span>
+    </div>
+
+    <!-- 心理咨询领域 -->
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">心理咨询</span>
+      <h4>心理咨询</h4>
+      <p>以咨询理论为基础，学习理解并介入人类心理问题的过程。</p>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">心理咨询</span>
+      <h4>异常心理学</h4>
+      <p>系统理解精神障碍与异常行为的原因、症状及诊断标准。</p>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">心理咨询</span>
+      <h4>发展心理学</h4>
+      <p>研究人类全生命周期身体、认知、社会、情绪发展的心理学领域。</p>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">心理咨询</span>
+      <h4>心理测量与评估</h4>
+      <p>运用心理测试工具，培养客观理解个人心理特性的能力。</p>
+    </div>
+    <div class="course-card" data-track="psych cert">
+      <span class="course-area area-psych">心理咨询</span>
+      <h4>教练咨询理论与实践</h4>
+      <p>运用教练技法协助目标设定与成长，与 KAC 教练资格取得相关联。</p>
+      <span class="cert-link cl-kac">KAC 教练关联</span>
+    </div>
+    <div class="course-card" data-track="psych">
+      <span class="course-area area-psych">心理咨询</span>
+      <h4>团体咨询</h4>
+      <p>学习理解团体动力并实施治疗性介入的团体咨询理论与实践。</p>
+    </div>
+
+    <!-- 公共课程 -->
+    <div class="course-card" data-track="common">
+      <span class="course-area area-common">公共课程</span>
+      <h4>基础统计学</h4>
+      <p>奠定用于研究及数据分析的统计思维与方法论基础。</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FACULTY -->
+<section id="faculty">
+  <div class="section-tag">FACULTY</div>
+  <h2>师资队伍</h2>
+  <p class="subtitle">拥有博士学位及国际顶级资质的资深临床医师亲自指导。</p>
+
+  <!-- 音乐治疗教师 -->
+  <div class="faculty-group-title">音乐治疗教师</div>
+  <div class="faculty-grid">
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">이</div>
+        <div>
+          <div class="fc-name">李尚恩</div>
+          <div class="fc-role">主任教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">Bonny GIM Fellow/Support Trainer</span>
+        <span class="fc-tag special">AMT 专家</span>
+        <span class="fc-tag special">AVPT</span>
+        <span class="fc-tag">临床音乐专家 1级</span>
+        <span class="fc-tag">KAC 教练</span>
+        <span class="fc-tag position">더클래스아이패밀리상담센터 咨询专家</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">Lesley Univ. 表现艺术治疗博士 / Michigan State Univ. 音乐治疗硕士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">문</div>
+        <div>
+          <div class="fc-name">文正杓</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">Bonny GIM Fellow / Primary Trainer</span>
+        <span class="fc-tag special">AVPT</span>
+        <span class="fc-tag">临床音乐专家 1级</span>
+        <span class="fc-tag position">Doctor Moon 心理意象研究所所长</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">Lesley Univ. 表现艺术治疗博士 / Temple Univ. 音乐治疗硕士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">고</div>
+        <div>
+          <div class="fc-name">高范锡</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">NMT® Fellow</span>
+        <span class="fc-tag">临床音乐专家 1级</span>
+        <span class="fc-tag position">临床音乐科学研究会副会长</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">汉世大学 音乐治疗博士 / 淑明女大 音乐治疗硕士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">양</div>
+        <div>
+          <div class="fc-name">梁恩娥</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">诺多夫-罗宾斯音乐治疗师 (NRMT)</span>
+        <span class="fc-tag special">Bonny GIM Fellow</span>
+        <span class="fc-tag">临床音乐专家 1级</span>
+        <span class="fc-tag position">淑明女大 客座教授</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">淑明女大 音乐治疗博士 / 硕士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">음</div>
+        <div>
+          <div class="fc-name">陰承熙</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">Bonny GIM Fellow/Support Trainer</span>
+        <span class="fc-tag special">AMT 专家</span>
+        <span class="fc-tag position">李南福音乐治疗研究所副所长</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">淑明女大 音乐治疗博士课程 / Michigan State Univ. 音乐治疗硕士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-blue">이</div>
+        <div>
+          <div class="fc-name">李贤正</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag special">美国认证音乐治疗师 (MT-BC)</span>
+        <span class="fc-tag special">神经学音乐治疗师 (NMT™)</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">Univ. of Miami 音乐治疗博士 / Colorado Univ. 音乐治疗硕士</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 多学科教师 -->
+  <div class="faculty-group-title">多学科教师 — 心理咨询 · 儿童家庭 · 认知</div>
+  <div class="faculty-grid">
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">박</div>
+        <div>
+          <div class="fc-name">朴慧英</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">青少年咨询师 1级</span>
+        <span class="fc-tag">临床心理师 2级</span>
+        <span class="fc-tag">临床音乐专家 1级</span>
+        <span class="fc-tag">认知学习咨询专家</span>
+        <span class="fc-tag position">参满南认知心理研究所所长</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">明知大 儿童学博士 / 音乐治疗硕士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">유</div>
+        <div>
+          <div class="fc-name">刘承恩</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">青少年咨询师 1级</span>
+        <span class="fc-tag">临床心理师 1级</span>
+        <span class="fc-tag">残障人康复咨询师 1级</span>
+        <span class="fc-tag">认知学习咨询专家</span>
+        <span class="fc-tag position">首尔市中浪儿童中心主任</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">明知大 儿童学博士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">김</div>
+        <div>
+          <div class="fc-name">金秀真</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">精神保健专业人员 2级</span>
+        <span class="fc-tag">咨询心理师 2级</span>
+        <span class="fc-tag">社会教育专业人员资格证 1级</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">延世大 心理学博士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">김</div>
+        <div>
+          <div class="fc-name">金虎正</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">青少年咨询师 1级</span>
+        <span class="fc-tag">游戏心理咨询实习督导</span>
+        <span class="fc-tag">沙盘游戏心理咨询实习督导</span>
+        <span class="fc-tag position">마음앤발달상담센터장</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">梨花女大 心理学博士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">권</div>
+        <div>
+          <div class="fc-name">权励源</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">哲学咨询师专家</span>
+        <span class="fc-tag">专业教练 KPC</span>
+        <span class="fc-tag">5R 教练领导力讲师</span>
+        <span class="fc-tag">美术心理咨询师 1级</span>
+        <span class="fc-tag position">明知大 哲学咨询治疗学系主任教授</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">明知大 哲学博士</span>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="fc-top">
+        <div class="fc-avatar av-green">백</div>
+        <div>
+          <div class="fc-name">白贤珠</div>
+          <div class="fc-role">教授</div>
+        </div>
+      </div>
+      <div class="fc-tags">
+        <span class="fc-tag">临床心理师 1级</span>
+        <span class="fc-tag">青少年咨询师 2级</span>
+        <span class="fc-tag">专业咨询 2级 正教师</span>
+        <span class="fc-tag">网络成瘾咨询师</span>
+        <span class="fc-tag position">洪城创意中心主任</span>
+        <span class="fc-tag" style="background:#f0f0f0;color:#888;">成均馆大 心理学博士</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <strong>音乐治疗学系 · 音乐心理治疗方向</strong><br>
+  <span style="font-size:11px;margin-top:4px;display:block;">硕士课程体系介绍页面 · 详情请联系学系办公室。</span>
+  <span style="font-size:11px;margin-top:6px;display:block;color:rgba(255,255,255,0.75);">
+    ☎ 02-300-0795, 0984 &nbsp;|&nbsp; ✉ <a href="mailto:mptlab@naver.com" style="color:rgba(255,255,255,0.85);text-decoration:none;">mptlab@naver.com</a> &nbsp;|&nbsp; <a href="mailto:mei503@mju.ac.kr" style="color:rgba(255,255,255,0.85);text-decoration:none;">mei503@mju.ac.kr</a>
+  </span>
+</footer>
+
+<script>
+function filterTrack(track) {
+  document.querySelectorAll('.track-btn').forEach(b => b.classList.remove('active'));
+  const map = {all:'tb-all', psy:'tb-psy', dev:'tb-dev', cert:'tb-cert'};
+  document.querySelector('.'+map[track]).classList.add('active');
+
+  document.querySelectorAll('.course-card').forEach(card => {
+    const t = card.dataset.track || '';
+    if (track === 'all') {
+      card.classList.remove('dim','highlight');
+      card.style.borderColor = '';
+      card.style.background  = '';
+    } else {
+      const match = t.split(' ').includes(track) || (track==='dev' && t.includes('req') && t.includes('dev'));
+      if (match) {
+        card.classList.remove('dim');
+        card.classList.add('highlight');
+      } else {
+        card.classList.remove('highlight');
+        card.classList.add('dim');
+      }
+    }
+  });
+
+  document.querySelectorAll('.course-card.highlight').forEach(c => {
+    c.style.borderColor = 'var(--blue)';
+    c.style.background  = 'var(--blue-lt)';
+  });
+}
+</script>
+</body>
+</html>

@@ -102,93 +102,118 @@ nav a:hover{background:rgba(255,255,255,.15);color:#fff;}
 
 /* ── SECTION ── */
 section{padding:64px 24px;max-width:1000px;margin:0 auto;}
-.section-tag{display:inline-block;background:var(--blue-lt);color:var(--blue-dk);font-size:13px;font-weight:bold;padding:3px 12px;border-radius:12px;letter-spacing:.5px;margin-bottom:10px;}
-h2{font-size:clamp(24px,3vw,30px);font-weight:900;color:var(--blue-dk);margin-bottom:6px;}
-.subtitle{color:var(--muted);font-size:16px;margin-bottom:36px;}
+.section-tag{display:inline-block;background:linear-gradient(90deg,#4a7c9e,#2e5975);color:#fff;font-size:13px;font-weight:900;padding:6px 18px;border-radius:30px;letter-spacing:1.2px;margin-bottom:14px;box-shadow:0 4px 14px rgba(46,89,117,.25);text-transform:uppercase;}
+#certs .section-tag{background:linear-gradient(90deg,#5a9a8c,#2e5975);box-shadow:0 4px 14px rgba(90,154,140,.3);}
+#roadmap .section-tag{background:linear-gradient(90deg,#ff8a3d,#ff6b35);box-shadow:0 4px 14px rgba(255,107,53,.3);}
+#tracks .section-tag{background:linear-gradient(90deg,#8a6cb5,#5a4985);box-shadow:0 4px 14px rgba(138,108,181,.3);}
+#faculty .section-tag{background:linear-gradient(90deg,#2d7dbf,#1a4d88);box-shadow:0 4px 14px rgba(45,125,191,.3);}
+#credits .section-tag{background:linear-gradient(90deg,#5a9a8c,#3a6b55);box-shadow:0 4px 14px rgba(90,154,140,.3);}
+h2{font-size:clamp(24px,3vw,30px);font-weight:900;color:var(--blue-dk);margin-bottom:6px;position:relative;padding-bottom:12px;}
+h2::after{content:'';position:absolute;left:0;bottom:0;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,#5a9a8c,#4a7c9e);}
+#roadmap h2::after{background:linear-gradient(90deg,#ff8a3d,#ff6b35);}
+#tracks h2::after{background:linear-gradient(90deg,#8a6cb5,#5a4985);}
+#faculty h2::after{background:linear-gradient(90deg,#2d7dbf,#1a4d88);}
+.subtitle{color:var(--muted);font-size:16px;margin-bottom:36px;margin-top:14px;}
 
 /* ── CERTS ── */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
-.cert-card{border-radius:12px;padding:22px 20px;text-align:left;border:1.5px solid var(--border);background:#fff;cursor:default;transition:.2s;}
-.cert-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(46,89,117,.10);}
-.cert-card h3{font-size:15px;font-weight:bold;margin-bottom:6px;line-height:1.4;color:var(--blue-dk);}
+.cert-card{border-radius:14px;padding:22px 20px;text-align:left;border:1.5px solid var(--border);background:#fff;cursor:default;transition:.25s;position:relative;overflow:hidden;}
+.cert-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#4a7c9e,#2e5975);}
+.cert-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(46,89,117,.18);border-color:#4a7c9e;}
+.cert-card h3{font-size:15px;font-weight:900;margin-bottom:6px;line-height:1.4;color:var(--blue-dk);}
 .cert-card p{font-size:13px;color:var(--muted);}
-.cert-card .cert-badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;margin-top:10px;font-weight:bold;background:var(--blue-lt);color:var(--blue-dk);}
-.badge-private {background:#e8f2f9;color:#2e5975;}
-.badge-national {background:#dce9f2;color:#1e4060;border:1px solid #b8cedf;}
-.badge-intl    {background:var(--teal-lt);color:var(--teal);border:1px solid #b8d8d2;}
-.badge-assoc   {background:#eaf2ee;color:#3a6b55;border:1px solid #b8d4c4;}
-.cert-group-label{font-size:12px;font-weight:bold;color:var(--blue-dk);letter-spacing:.5px;margin-bottom:14px;padding-left:10px;border-left:3px solid var(--blue);line-height:1.2;}
-.cert-group-section{border-radius:12px;padding:22px 24px;margin-top:16px;}
-.cert-group-section:first-child{background:var(--blue-lt);}
-.cert-group-section:nth-child(2){background:var(--teal-lt);}
-.cert-group-section:nth-child(3){background:#f5f5f8;}
+.cert-card .cert-badge{display:inline-block;font-size:11px;padding:4px 12px;border-radius:20px;margin-top:10px;font-weight:900;letter-spacing:.3px;}
+.badge-private{background:linear-gradient(90deg,#e8f2f9,#d5e5f3);color:#2e5975;border:1px solid #c5d7e8;}
+.badge-national{background:linear-gradient(90deg,#2d7dbf,#1a4d88);color:#fff;box-shadow:0 3px 10px rgba(45,125,191,.35);}
+.badge-intl{background:linear-gradient(90deg,#ff8a3d,#ff6b35);color:#fff;box-shadow:0 3px 10px rgba(255,107,53,.35);}
+.badge-assoc{background:linear-gradient(90deg,#5a9a8c,#3a6b55);color:#fff;box-shadow:0 3px 10px rgba(90,154,140,.35);}
+.cert-group-label{font-size:13px;font-weight:900;color:var(--blue-dk);letter-spacing:.5px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--blue);line-height:1.2;text-transform:uppercase;}
+.cert-group-section{border-radius:16px;padding:24px 26px;margin-top:18px;border:1px solid rgba(255,255,255,.8);}
+.cert-group-section:first-child{background:linear-gradient(135deg,#e8f2f9 0%,#d5e5f3 100%);box-shadow:0 4px 18px rgba(46,89,117,.08);}
+.cert-group-section:nth-child(2){background:linear-gradient(135deg,#e8f5f1 0%,#d5eae4 100%);box-shadow:0 4px 18px rgba(90,154,140,.08);}
+.cert-group-section:nth-child(3){background:linear-gradient(135deg,#f5f5f8 0%,#edeff3 100%);box-shadow:0 4px 18px rgba(100,100,120,.08);}
 .c1,.c2,.c3,.c4,.c5{}
 
 /* ── CURRICULUM TABLE ── */
 .curr-wrap{overflow-x:auto;width:100%;}
-.curr-table{border-collapse:collapse;width:100%;min-width:680px;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.08);border-radius:12px;overflow:hidden;}
-.curr-table caption{background:var(--blue-dk);color:#fff;font-size:15px;font-weight:bold;padding:13px 16px;text-align:center;letter-spacing:.4px;}
+.curr-table{border-collapse:collapse;width:100%;min-width:680px;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.10);border-radius:14px;overflow:hidden;}
+.curr-table caption{background:linear-gradient(90deg,#ff8a3d 0%,#ff6b35 100%);color:#fff;font-size:15px;font-weight:900;padding:14px 16px;text-align:center;letter-spacing:.4px;box-shadow:0 2px 10px rgba(255,107,53,.3);}
 .curr-table td{border:1px solid #ccdce8;padding:10px 13px;text-align:center;font-size:14px;vertical-align:middle;line-height:1.65;}
-.ct-hdr{background:var(--blue-dk);color:#fff;font-weight:bold;font-size:14px;}
-.ct-lbl{background:#ddeaf5;color:#2d5a7e;font-weight:bold;font-size:14px;}
-.ct-sub{background:#d6ede6;color:#2e6b5a;font-weight:bold;font-size:13px;}
-.ct-req {background:#fafcff;}
-.ct-req2{background:#f0f6fb;}
-.ct-mus {background:#fff9f4;}
-.ct-dev {background:#f2fcf8;}
-.ct-psy {background:#f8f4ff;}
-.ct-com {background:#fffce8;}
-.ct-ths {background:#f0f8f5;}
+.ct-hdr{background:linear-gradient(180deg,#1a4d88,#0d2742);color:#fff;font-weight:900;font-size:14px;letter-spacing:.5px;}
+.ct-lbl{background:linear-gradient(180deg,#dde9f5,#c8dcef);color:#1a4d88;font-weight:900;font-size:14px;}
+.ct-sub{background:linear-gradient(180deg,#d6ede6,#bfdecf);color:#2e6b5a;font-weight:900;font-size:13px;}
+.ct-req {background:#fafcff;font-weight:600;color:#1a4d88;}
+.ct-req2{background:#e8f1fa;font-weight:700;color:#1a4d88;}
+.ct-mus {background:#fff6ee;color:#a85a1e;}
+.ct-dev {background:#ecf9f3;color:#2e6b5a;}
+.ct-psy {background:#f3ecfb;color:#5a4985;}
+.ct-com {background:#fffbe0;color:#8a6c1a;}
+.ct-ths {background:#e8f5ef;color:#2e6b5a;font-weight:700;}
 .curr-table td[contenteditable="true"]:hover{background:#e8f3ff!important;}
 .curr-table td[contenteditable="true"]:focus{outline:none;background:#d8eaff!important;box-shadow:inset 0 0 0 2px var(--blue);border-radius:3px;}
 
 /* ── TRACK EXPLORER ── */
-.track-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
-.track-btn{padding:9px 22px;border-radius:6px;border:1.5px solid var(--border);font-size:15px;font-weight:bold;cursor:pointer;background:#fff;color:var(--muted);transition:.2s;font-family:inherit;}
-.track-btn:hover{border-color:var(--blue);color:var(--blue);}
-.track-btn.active{background:var(--blue-dk);border-color:var(--blue-dk);color:#fff;}
-.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
-.course-card{border-radius:10px;border:1.5px solid var(--border);background:#fff;padding:18px;transition:.25s;cursor:default;}
-.course-card:hover{box-shadow:0 4px 14px rgba(46,89,117,.10);transform:translateY(-2px);}
-.course-card.dim{opacity:.2;filter:grayscale(.6);}
-.course-card.highlight{border-color:var(--blue);background:var(--blue-lt);}
-.course-area{font-size:11px;font-weight:bold;padding:2px 9px;border-radius:4px;display:inline-block;margin-bottom:10px;background:var(--blue-lt);color:var(--blue-dk);}
-.area-req,.area-music,.area-dev,.area-psych,.area-common{background:var(--blue-lt);color:var(--blue-dk);}
-.area-dev  {background:var(--teal-lt);color:var(--teal);}
-.course-card h4{font-size:15px;font-weight:bold;margin-bottom:5px;color:var(--text);}
+.track-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.track-btn{padding:10px 22px;border-radius:30px;border:1.5px solid var(--border);font-size:14px;font-weight:900;cursor:pointer;background:#fff;color:var(--muted);transition:.25s;font-family:inherit;letter-spacing:.3px;}
+.track-btn:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 14px rgba(74,124,158,.2);}
+.track-btn.active{background:linear-gradient(90deg,#8a6cb5,#5a4985);border-color:transparent;color:#fff;box-shadow:0 6px 20px rgba(138,108,181,.4);}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.course-card{border-radius:12px;border:1.5px solid var(--border);background:#fff;padding:18px;transition:.3s;cursor:default;position:relative;}
+.course-card:hover{box-shadow:0 8px 24px rgba(46,89,117,.13);transform:translateY(-3px);border-color:#8a6cb5;}
+.course-card.dim{opacity:.22;filter:grayscale(.6);}
+.course-card.highlight{border-color:var(--blue);background:linear-gradient(135deg,#eef5fc 0%,#dfecf8 100%);box-shadow:0 6px 20px rgba(74,124,158,.18);}
+.course-area{font-size:11px;font-weight:900;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:10px;letter-spacing:.5px;}
+.area-req{background:linear-gradient(90deg,#1a4d88,#0d2742);color:#fff;}
+.area-music{background:linear-gradient(90deg,#ffa96b,#ff8a3d);color:#fff;}
+.area-dev{background:linear-gradient(90deg,#5a9a8c,#3a6b55);color:#fff;}
+.area-psych{background:linear-gradient(90deg,#8a6cb5,#5a4985);color:#fff;}
+.area-common{background:linear-gradient(90deg,#d4a82e,#a8851a);color:#fff;}
+.course-card h4{font-size:15px;font-weight:900;margin-bottom:5px;color:var(--text);}
 .course-card p{font-size:13px;color:var(--muted);line-height:1.6;}
-.cert-link{font-size:11px;font-weight:bold;margin-top:8px;padding:3px 9px;border-radius:4px;display:inline-block;background:var(--teal-lt);color:var(--teal);}
-.cl-psy{background:var(--blue-lt);color:var(--blue-dk);}
-.cl-dev,.cl-gim,.cl-kac,.cl-inj,.cl-mus{background:var(--teal-lt);color:var(--teal);}
+.cert-link{font-size:11px;font-weight:900;margin-top:10px;padding:3px 10px;border-radius:20px;display:inline-block;}
+.cl-psy{background:linear-gradient(90deg,#dde9f5,#c8dcef);color:#1a4d88;}
+.cl-dev{background:linear-gradient(90deg,#d6ede6,#b6dcc9);color:#2e6b5a;}
+.cl-gim{background:linear-gradient(90deg,#ff8a3d,#ff6b35);color:#fff;box-shadow:0 3px 10px rgba(255,107,53,.35);}
+.cl-kac{background:linear-gradient(90deg,#e5dcf2,#c9b8e2);color:#5a4985;}
+.cl-inj{background:linear-gradient(90deg,#fce0b8,#f9ca8a);color:#a85a1e;}
+.cl-mus{background:linear-gradient(90deg,#ffa96b,#ff8a3d);color:#fff;}
 
 /* ── FACULTY ── */
-.faculty-group-title{font-size:14px;font-weight:bold;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1.5px solid var(--border);}
-.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:36px;}
-.faculty-card{background:#fff;border-radius:10px;border:1.5px solid var(--border);padding:20px;transition:.2s;}
-.faculty-card:hover{box-shadow:0 4px 16px rgba(46,89,117,.10);transform:translateY(-2px);}
-.fc-top{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.faculty-group-title{font-size:14px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:#2e5975;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,#2d7dbf 0%,#1a4d88 40%,transparent 100%) 1;position:relative;}
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:38px;}
+.faculty-card{background:#fff;border-radius:12px;border:1.5px solid var(--border);padding:22px;transition:.3s;position:relative;overflow:hidden;}
+.faculty-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#2d7dbf,#1a4d88);}
+.faculty-grid:nth-of-type(2) .faculty-card::before{background:linear-gradient(180deg,#5a9a8c,#3a6b55);}
+.faculty-card:hover{box-shadow:0 10px 30px rgba(46,89,117,.15);transform:translateY(-3px);border-color:#4a7c9e;}
+.fc-top{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
 .fc-avatar{display:none;}
 .av-blue,.av-green{display:none;}
-.fc-name{font-size:17px;font-weight:bold;color:var(--blue-dk);}
-.fc-role{font-size:13px;color:var(--muted);margin-top:1px;}
+.fc-name{font-size:18px;font-weight:900;color:var(--blue-dk);letter-spacing:-.3px;}
+.fc-role{font-size:13px;color:#4a7c9e;margin-top:1px;font-weight:700;}
 .fc-role-badge{display:none;}
-.fc-tags{display:flex;flex-wrap:wrap;gap:5px;}
-.fc-tag{font-size:12px;background:var(--teal-lt);color:var(--teal);padding:4px 9px;border-radius:4px;}
-.fc-tag.position{background:#f3f0f8;color:#6b52a0;}
+.fc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.fc-tag{font-size:12px;background:linear-gradient(90deg,#e8f1fa,#d5e5f3);color:#1a4d88;padding:4px 10px;border-radius:20px;font-weight:700;}
+.fc-tag.special{background:linear-gradient(90deg,#ff8a3d,#ff6b35);color:#fff;font-weight:900;box-shadow:0 3px 10px rgba(255,107,53,.3);}
+.fc-tag.position{background:linear-gradient(90deg,#f3ecfb,#e5dcf2);color:#5a4985;font-weight:700;}
 .fc-desc{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;}
 
 /* ── CREDITS ── */
-.credit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.credit-card{border-radius:14px;padding:28px;background:#fff;border:2px solid #dde8f4;box-shadow:0 2px 10px rgba(0,0,0,.06);}
-.credit-card h3{font-size:17px;font-weight:bold;color:var(--blue-dk);margin-bottom:12px;}
-.credit-num{font-size:42px;font-weight:900;color:var(--blue);}
-.credit-num sub{font-size:16px;color:var(--muted);}
+.credit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.credit-card{border-radius:16px;padding:30px;background:#fff;border:2px solid #dde8f4;box-shadow:0 6px 24px rgba(46,89,117,.08);position:relative;overflow:hidden;transition:.3s;}
+.credit-card::before{content:'';position:absolute;left:0;top:0;right:0;height:5px;background:linear-gradient(90deg,#2d7dbf,#1a4d88);}
+.credit-card:nth-child(2)::before{background:linear-gradient(90deg,#5a9a8c,#3a6b55);}
+.credit-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(46,89,117,.14);}
+.credit-card h3{font-size:17px;font-weight:900;color:var(--blue-dk);margin-bottom:12px;}
+.credit-num{font-size:48px;font-weight:900;background:linear-gradient(90deg,#2d7dbf,#1a4d88);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px;}
+.credit-card:nth-child(2) .credit-num{background:linear-gradient(90deg,#5a9a8c,#3a6b55);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.credit-num sub{font-size:16px;color:var(--muted);-webkit-text-fill-color:var(--muted);}
 .credit-desc{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.6;}
-.credit-plus{display:inline-block;background:var(--green-lt);color:var(--teal);font-size:13px;font-weight:bold;padding:3px 10px;border-radius:10px;margin-top:10px;}
+.credit-plus{display:inline-block;background:linear-gradient(90deg,#5a9a8c,#3a6b55);color:#fff;font-size:13px;font-weight:900;padding:4px 12px;border-radius:20px;margin-top:12px;box-shadow:0 3px 10px rgba(90,154,140,.3);}
 @media(max-width:600px){.credit-grid{grid-template-columns:1fr;}.roadmap{grid-template-columns:1fr;}.roadmap::before{display:none;}}
 
 /* ── FOOTER ── */
-footer{background:var(--blue-dk);color:rgba(255,255,255,.7);text-align:center;padding:28px;font-size:12px;}
+footer{background:linear-gradient(135deg,#0d2742 0%,#1a3d6b 100%);color:rgba(255,255,255,.75);text-align:center;padding:32px 28px;font-size:12px;position:relative;}
+footer::before{content:'';position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,#ff8a3d 0%,#5a9a8c 50%,#2d7dbf 100%);}
 footer strong{color:#fff;}
 
 /* ── MISC ── */
@@ -542,8 +567,8 @@ footer strong{color:#fff;}
       </div>
       <div class="fc-tags">
         <span class="fc-tag special">Bonny GIM Fellow/Support Trainer</span>
-        <span class="fc-tag special">AMT 전문가</span>
-        <span class="fc-tag special">AVPT</span>
+        <span class="fc-tag special">분석적음악치료사(AMT)</span>
+        <span class="fc-tag special">성악심리치료사(AVPT)</span>
         <span class="fc-tag">임상음악전문가 1급</span>
         <span class="fc-tag">KAC 코치</span>
         <span class="fc-tag position">더클래스아이패밀리상담센터 상담전문가</span>
@@ -561,7 +586,7 @@ footer strong{color:#fff;}
       </div>
       <div class="fc-tags">
         <span class="fc-tag special">Bonny GIM Fellow / Primary Trainer</span>
-        <span class="fc-tag special">AVPT</span>
+        <span class="fc-tag special">성악심리치료사(AVPT)</span>
         <span class="fc-tag">임상음악전문가 1급</span>
         <span class="fc-tag position">닥터문 심리심상연구소장</span>
         <span class="fc-tag" style="background:#f0f0f0;color:#888;">Lesley Univ. 표현예술치료 박사 / Temple Univ. 음악치료 석사</span>
@@ -577,7 +602,7 @@ footer strong{color:#fff;}
         </div>
       </div>
       <div class="fc-tags">
-        <span class="fc-tag special">NMT® Fellow</span>
+        <span class="fc-tag special">신경학적음악치료 펠로우(NMT® Fellow)</span>
         <span class="fc-tag">임상음악전문가 1급</span>
         <span class="fc-tag position">임상음악과학연구회 부회장</span>
         <span class="fc-tag" style="background:#f0f0f0;color:#888;">한세대학교 음악치료 박사 / 숙명여대 음악치료 석사</span>
@@ -611,7 +636,7 @@ footer strong{color:#fff;}
       </div>
       <div class="fc-tags">
         <span class="fc-tag special">Bonny GIM Fellow/Support Trainer</span>
-        <span class="fc-tag special">AMT 전문가</span>
+        <span class="fc-tag special">분석적음악치료사(AMT)</span>
         <span class="fc-tag position">이난복음악치료연구소 부소장</span>
         <span class="fc-tag" style="background:#f0f0f0;color:#888;">숙명여대 음악치료 박사수료 / Michigan State Univ. 음악치료 석사</span>
       </div>
@@ -627,7 +652,7 @@ footer strong{color:#fff;}
       </div>
       <div class="fc-tags">
         <span class="fc-tag special">미국공인 음악치료사 (MT-BC)</span>
-        <span class="fc-tag special">신경학적 음악치료사 (NMT™)</span>
+        <span class="fc-tag special">신경학적음악치료 펠로우(NMT® Fellow)</span>
         <span class="fc-tag" style="background:#f0f0f0;color:#888;">Univ. of Miami 음악치료 박사 / Colorado Univ. 음악치료 석사</span>
       </div>
     </div>
@@ -721,7 +746,7 @@ footer strong{color:#fff;}
         <span class="fc-tag">전문코치 KPC</span>
         <span class="fc-tag">5R 코칭리더십 강사</span>
         <span class="fc-tag">미술심리상담사 1급</span>
-        <span class="fc-tag position">명지대 철학상담치료학과 주임교수</span>
+        <span class="fc-tag position">아트인사이트 문화예술상담센터 센터장</span>
         <span class="fc-tag" style="background:#f0f0f0;color:#888;">명지대 철학 박사</span>
       </div>
     </div>

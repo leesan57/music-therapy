@@ -396,15 +396,15 @@ footer strong{color:#fff;}
 
 /* ── 박사 연계 섹션 ── */
 .phd-banner {
-  background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 50%, #1a3d6b 100%);
+  background: linear-gradient(135deg, #eef2ff 0%, #f0ebff 50%, #eaf4ff 100%);
   border-radius: 20px;
   padding: 40px 44px;
   margin: 0 auto;
   max-width: 1000px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(26,26,62,.35);
-  color: #fff;
+  box-shadow: 0 4px 20px rgba(74,124,158,.1); border: 1px solid rgba(138,108,181,.18);
+  color: var(--blue-dk);
 }
 .phd-banner::before {
   content:'';position:absolute;inset:0;pointer-events:none;
@@ -413,7 +413,7 @@ footer strong{color:#fff;}
     radial-gradient(ellipse at 90% 30%, rgba(74,124,158,.25) 0%, transparent 50%);
 }
 .phd-inner { position:relative;z-index:1;display:flex;align-items:center;gap:36px;flex-wrap:wrap; }
-.phd-icon { font-size:52px;flex-shrink:0;filter:drop-shadow(0 4px 16px rgba(138,108,181,.5)); }
+.phd-icon { font-size:52px;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(138,108,181,.2)); }
 .phd-text { flex:1;min-width:220px; }
 .phd-label {
   display:inline-block;background:linear-gradient(90deg,#8a6cb5,#5a4985);
@@ -469,7 +469,7 @@ footer strong{color:#fff;}
   content: '⭐ GIM';
   position: absolute; top: -1px; right: 12px;
   background: linear-gradient(90deg, #f0a500, #c87800);
-  color: #fff; font-size: 10px; font-weight: 900; letter-spacing: .8px;
+  color: var(--blue-dk); font-size: 10px; font-weight: 900; letter-spacing: .8px;
   padding: 4px 12px; border-radius: 0 0 10px 10px;
   box-shadow: 0 3px 8px rgba(200,120,0,.3);
 }
@@ -483,7 +483,7 @@ footer strong{color:#fff;}
   content: '🧠 NMT';
   position: absolute; top: -1px; right: 12px;
   background: linear-gradient(90deg, #3a8a7a, #2a6a5a);
-  color: #fff; font-size: 10px; font-weight: 900; letter-spacing: .8px;
+  color: var(--blue-dk); font-size: 10px; font-weight: 900; letter-spacing: .8px;
   padding: 4px 12px; border-radius: 0 0 10px 10px;
   box-shadow: 0 3px 8px rgba(42,106,90,.25);
 }
@@ -497,7 +497,7 @@ footer strong{color:#fff;}
   content: '🌐 MT-BC';
   position: absolute; top: -1px; right: 12px;
   background: linear-gradient(90deg, #5060c8, #3040a0);
-  color: #fff; font-size: 10px; font-weight: 900; letter-spacing: .8px;
+  color: var(--blue-dk); font-size: 10px; font-weight: 900; letter-spacing: .8px;
   padding: 4px 12px; border-radius: 0 0 10px 10px;
   box-shadow: 0 3px 8px rgba(48,64,160,.25);
 }
@@ -512,56 +512,95 @@ footer strong{color:#fff;}
 
 
 /* ── WHY THIS TRACK ── */
+.why-section-wrap {
+  background: linear-gradient(135deg, #f2f7ff 0%, #f7f2ff 50%, #f0f8f5 100%);
+  border-radius: 24px;
+  padding: 48px 40px 44px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(138,108,181,.12);
+  box-shadow: 0 2px 24px rgba(74,124,158,.08);
+}
+.why-section-wrap::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -60px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(138,108,181,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why-section-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(90,154,140,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.why-section-wrap .section-tag {
+  background: linear-gradient(90deg, #8a6cb5, #4a7c9e);
+}
+.why-section-wrap h2 { color: var(--blue-dk); }
+.why-section-wrap h2::after {
+  background: linear-gradient(90deg, #8a6cb5, #4a7c9e);
+}
+.why-section-wrap .subtitle { color: var(--muted); }
+
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
   margin-top: 32px;
+  position: relative;
+  z-index: 1;
 }
 .why-card {
-  background: #fff;
-  border-radius: 16px;
-  border: 1.5px solid var(--border);
-  padding: 28px 24px;
-  transition: transform .25s ease, box-shadow .25s ease;
+  background: rgba(255,255,255,.82);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.9);
+  padding: 26px 22px 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(74,124,158,.07), 0 1px 3px rgba(74,124,158,.04);
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
 }
 .why-card:hover {
+  background: rgba(255,255,255,.97);
   transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(46,89,117,.13);
-  border-color: #8a6cb5;
+  box-shadow: 0 12px 32px rgba(74,124,158,.13);
 }
 .why-icon {
-  font-size: 32px;
-  margin-bottom: 14px;
+  font-size: 26px;
+  margin-bottom: 16px;
+  width: 50px; height: 50px;
+  border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
 }
 .why-card h3 {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 900;
   color: var(--blue-dk);
-  margin-bottom: 10px;
-  line-height: 1.4;
+  margin-bottom: 9px;
+  line-height: 1.45;
+  letter-spacing: -.1px;
 }
 .why-card p {
   font-size: 13px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-
-/* ── WHY CARD 색상 강조 ── */
-.why-card:nth-child(1) { border-top: 4px solid #4a7c9e; }
-.why-card:nth-child(2) { border-top: 4px solid #5a9a8c; }
-.why-card:nth-child(3) { border-top: 4px solid #8a6cb5; }
-.why-card:nth-child(4) { border-top: 4px solid #ff8a3d; }
-.why-card:nth-child(5) { border-top: 4px solid #e5727b; }
-.why-card:nth-child(1) .why-icon { background: linear-gradient(135deg,#eef5fc,#d5e5f3); border-radius: 14px; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.why-card:nth-child(2) .why-icon { background: linear-gradient(135deg,#e8f5f1,#d5eae4); border-radius: 14px; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.why-card:nth-child(3) .why-icon { background: linear-gradient(135deg,#f0ebfa,#e4d9f5); border-radius: 14px; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.why-card:nth-child(4) .why-icon { background: linear-gradient(135deg,#fff3eb,#ffe4cc); border-radius: 14px; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.why-card:nth-child(1) h3 { color: #2e5975; }
-.why-card:nth-child(2) h3 { color: #2e6b5e; }
-.why-card:nth-child(3) h3 { color: #6a4c93; }
-.why-card:nth-child(4) h3 { color: #c45e10; }
+/* ── 카드별 포인트 색상 ── */
+.why-card:nth-child(1) { border-left: 3px solid #4a7c9e; }
+.why-card:nth-child(1) .why-icon { background: rgba(74,124,158,.1); }
+.why-card:nth-child(2) { border-left: 3px solid #5a9a8c; }
+.why-card:nth-child(2) .why-icon { background: rgba(90,154,140,.1); }
+.why-card:nth-child(3) { border-left: 3px solid #8a6cb5; }
+.why-card:nth-child(3) .why-icon { background: rgba(138,108,181,.1); }
+.why-card:nth-child(4) { border-left: 3px solid #e8874a; }
+.why-card:nth-child(4) .why-icon { background: rgba(232,135,74,.1); }
+.why-card:nth-child(5) { border-left: 3px solid #d96370; }
+.why-card:nth-child(5) .why-icon { background: rgba(217,99,112,.1); }
 
 
 
@@ -631,6 +670,7 @@ footer strong{color:#fff;}
 
 <!-- WHY THIS TRACK -->
 <section id="why">
+  <div class="why-section-wrap">
   <div class="section-tag">WHY THIS TRACK</div>
   <h2>왜 명지대학교 음악치료학과<br><span style="background:linear-gradient(90deg,#8a6cb5,#4a7c9e);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.15em;font-weight:900;letter-spacing:-0.5px;">음악심리치료</span><span style="background:linear-gradient(90deg,#8a6cb5,#4a7c9e);-webkit-background-clip:text;background-clip:text;color:transparent;"> 트랙</span>인가?</h2>
   <p class="subtitle">임상음악치료를 기반으로, 음악심리치료 전문성까지 함께 갖추는 트랙입니다.</p>
@@ -660,6 +700,7 @@ footer strong{color:#fff;}
       <h3>치료사로서의 성장 지원</h3>
       <p>매학기 외부 전문가 특강과 자기분석 시간을 통해 임상가로서의 자기 성찰과 전문성 개발을 체계적으로 지원합니다.</p>
     </div>
+  </div>
   </div>
 </section>
 

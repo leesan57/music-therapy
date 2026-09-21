@@ -607,15 +607,28 @@ footer strong{color:#fff;}
 
 
 /* ── FACULTY 헤딩 가운데 정렬 ── */
-#faculty > .section-tag,
-#faculty > h2,
-#faculty > .subtitle,
-#faculty .faculty-group-title {
+#faculty {
+  text-align: center !important;
+}
+#faculty > h2 {
   text-align: center !important;
 }
 #faculty > h2::after {
   left: 50% !important;
   transform: translateX(-50%) !important;
+}
+#faculty > .subtitle {
+  text-align: center !important;
+}
+#faculty .faculty-group-title {
+  text-align: center !important;
+}
+#faculty .faculty-card,
+#faculty .fc-info,
+#faculty .fc-top,
+#faculty .fc-creds,
+#faculty .fc-cred-bar {
+  text-align: left !important;
 }
 
 </style>
@@ -1055,12 +1068,12 @@ footer strong{color:#fff;}
 </div>
 
 <section id="faculty">
-  <div class="section-tag">FACULTY</div>
-  <h2>교수진 소개</h2>
-  <p class="subtitle">박사학위와 독보적인 국제 자격을 보유한 베테랑 임상가들이 직접 지도합니다.</p>
+  <div class="section-tag" style="display:block;text-align:center;">FACULTY</div>
+  <h2 style="text-align:center;">교수진 소개</h2>
+  <p class="subtitle" style="text-align:center;">박사학위와 독보적인 국제 자격을 보유한 베테랑 임상가들이 직접 지도합니다.</p>
 
   <!-- 음악치료 교수진 -->
-  <div class="faculty-group-title">음악치료 교수진</div>
+  <div class="faculty-group-title" style="text-align:center;">음악치료 교수진</div>
   <div class="faculty-grid">
 
     <div class="faculty-card">

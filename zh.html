@@ -587,15 +587,28 @@ footer strong{color:#fff;}
 
 
 /* ── FACULTY 헤딩 가운데 정렬 ── */
-#faculty > .section-tag,
-#faculty > h2,
-#faculty > .subtitle,
-#faculty .faculty-group-title {
+#faculty {
+  text-align: center !important;
+}
+#faculty > h2 {
   text-align: center !important;
 }
 #faculty > h2::after {
   left: 50% !important;
   transform: translateX(-50%) !important;
+}
+#faculty > .subtitle {
+  text-align: center !important;
+}
+#faculty .faculty-group-title {
+  text-align: center !important;
+}
+#faculty .faculty-card,
+#faculty .fc-info,
+#faculty .fc-top,
+#faculty .fc-creds,
+#faculty .fc-cred-bar {
+  text-align: left !important;
 }
 
 </style>
@@ -1027,7 +1040,7 @@ footer strong{color:#fff;}
 </div>
 
 <section id="faculty">
-  <div class="section-tag">FACULTY</div>
+  <div class="section-tag" style="display:block;text-align:center;">FACULTY</div>
   <h2>师资队伍</h2>
   <p class="subtitle">拥有博士学位及国际顶级资质的资深临床医师亲自指导。</p>
 

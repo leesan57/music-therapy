@@ -19,7 +19,7 @@
   --white:   #fff;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:58px;}
 body{font-family:'PingFang SC','Microsoft YaHei','微软雅黑',sans-serif;color:var(--text);background:#f8fafd;font-size:17px;line-height:1.8;}
 
 /* ── NAV ── */
@@ -332,7 +332,6 @@ footer strong{color:#fff;}
   background: linear-gradient(160deg, #f0f6ff 0%, #f8fafd 100%);
   border-radius: 24px;
   padding: 64px 32px !important;
-  margin: 0 -8px;
 }
 
 /* ── hero stat 세련 ── */
@@ -611,6 +610,57 @@ footer strong{color:#fff;}
   text-align: left !important;
 }
 
+
+/* ── WHY CARD 키워드 ── */
+.why-keyword {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.why-card:nth-child(1) .why-keyword { color: #4a7c9e; }
+.why-card:nth-child(2) .why-keyword { color: #5a9a8c; }
+.why-card:nth-child(3) .why-keyword { color: #8a6cb5; }
+.why-card:nth-child(4) .why-keyword { color: #e8874a; }
+.why-card:nth-child(5) .why-keyword { color: #d96370; }
+.why-card:nth-child(6) .why-keyword { color: #4a9e7a; }
+
+
+/* ── 섹션 헤딩 가운데 정렬 (전체) ── */
+section > .section-tag { display: block !important; text-align: center !important; }
+section > h2 { text-align: center !important; }
+section > h2::after { left: 50% !important; transform: translateX(-50%) !important; }
+section > .subtitle { text-align: center !important; }
+
+/* ── why-section-wrap 헤딩 가운데 정렬 ── */
+.why-section-wrap > .section-tag { display: block !important; text-align: center !important; }
+.why-section-wrap > h2 { text-align: center !important; }
+.why-section-wrap > h2::after { left: 50% !important; transform: translateX(-50%) !important; }
+.why-section-wrap > .subtitle { text-align: center !important; }
+
+/* ── ROADMAP (.inner) 헤딩 가운데 정렬 ── */
+.inner > .section-tag { display: block !important; text-align: center !important; }
+.inner > h2 { text-align: center !important; }
+.inner > h2::after { left: 50% !important; transform: translateX(-50%) !important; }
+.inner > .subtitle { text-align: center !important; }
+
+/* ── why-card 아이콘+키워드 한 줄 배치 ── */
+.why-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.why-icon-row .why-icon {
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+.why-icon-row .why-keyword {
+  margin-bottom: 0;
+  font-size: 18px;
+}
 </style>
 </head>
 <body>
@@ -671,32 +721,32 @@ footer strong{color:#fff;}
   <p class="subtitle">以临床音乐治疗为基础，同时深化音乐心理治疗专业能力的专业方向。</p>
   <div class="why-grid">
     <div class="why-card">
-      <div class="why-icon">🎵</div>
+      <div class="why-icon-row"><div class="why-icon">🎵</div><div class="why-keyword">专业性</div></div>
       <h3>临床能力 + 心理治疗专业性</h3>
       <p>临床音乐治疗作为基础必修，在此之上深化音乐心理治疗专业。在一个课程中同时具备两种专业能力。</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">📋</div>
+      <div class="why-icon-row"><div class="why-icon">📋</div><div class="why-keyword">资格</div></div>
       <h3>多种资格，一个课程</h3>
       <p>音乐心理咨询师·音乐康复师·发展康复师等多种资格可同时备考，课程体系专为此设计。</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🏛️</div>
+      <div class="why-icon-row"><div class="why-icon">🏛️</div><div class="why-keyword">实习</div></div>
       <h3>公共机构·医院实习</h3>
       <p>在明知综合治疗研究中心及公共机构、医院等临床机构实习，系统培养以现场为中心的专业临床能力。</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🔬</div>
+      <div class="why-icon-row"><div class="why-icon">🔬</div><div class="why-keyword">研究</div></div>
       <h3>符合兴趣的研究方向</h3>
       <p>在音乐治疗全领域内，可根据自身临床兴趣选择研究主题与方法论。</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🌱</div>
+      <div class="why-icon-row"><div class="why-icon">🌱</div><div class="why-keyword">成长</div></div>
       <h3>治疗师个人成长支持</h3>
       <p>每学期提供外部专家特别讲座与自我分析时间，系统性地支持临床治疗师的自我反思与专业成长。</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🎓</div>
+      <div class="why-icon-row"><div class="why-icon">🎓</div><div class="why-keyword">升学</div></div>
       <h3>拓展博士升学选择</h3>
       <p>硕士毕业后，可升读心理康复学科或教练心理学科博士课程，成长为超越音乐治疗领域的专业人才。</p>
     </div>
@@ -1045,7 +1095,7 @@ footer strong{color:#fff;}
   <p class="subtitle">拥有博士学位及国际顶级资质的资深临床医师亲自指导。</p>
 
   <!-- 音乐治疗教师 -->
-  <div class="faculty-group-title">音乐治疗教师</div>
+  <div class="faculty-group-title" style="text-align:center;">音乐治疗教师</div>
   <div class="faculty-grid">
 
     <div class="faculty-card">
@@ -1159,7 +1209,7 @@ footer strong{color:#fff;}
   </div><!-- /faculty-grid 음악치료 -->
 
   <!-- 多学科教师 -->
-  <div class="faculty-group-title">多学科教师 — 心理咨询 · 儿童家庭 · 认知</div>
+  <div class="faculty-group-title" style="text-align:center;">多学科教师 — 心理咨询 · 儿童家庭 · 认知</div>
   <div class="faculty-grid">
 
     <div class="faculty-card">

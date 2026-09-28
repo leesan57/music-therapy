@@ -661,6 +661,37 @@ section > .subtitle { text-align: center !important; }
   margin-bottom: 0;
   font-size: 18px;
 }
+
+/* ── 전문성 카드 차별점 강조 ── */
+.why-only-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  color: #fff;
+  background: linear-gradient(90deg, #7b3fc4, #1a6abf);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.why-card:nth-child(1) {
+  border-left: 3px solid #4a7c9e;
+  background: rgba(255,255,255,.95) !important;
+  box-shadow: 0 4px 20px rgba(123,63,196,.13), 0 1px 4px rgba(74,124,158,.08) !important;
+}
+.why-highlight {
+  background: linear-gradient(90deg, #7b3fc4, #1a6abf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+.why-unique {
+  color: #6a3ab0;
+  font-weight: 700;
+  font-style: normal;
+}
 </style>
 </head>
 <body>
@@ -718,17 +749,18 @@ section > .subtitle { text-align: center !important; }
   <div class="why-section-wrap">
   <div class="section-tag">WHY THIS TRACK</div>
   <h2>为什么选择明知大学音乐治疗学科<br><span style="background:linear-gradient(90deg,#7b3fc4,#1a6abf);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.15em;font-weight:900;letter-spacing:-0.3px;">音乐心理治疗</span><span style="background:linear-gradient(90deg,#7b3fc4,#1a6abf);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;">方向</span>?</h2>
-  <p class="subtitle">以临床音乐治疗为基础，同时深化音乐心理治疗专业能力的专业方向。</p>
+  <p class="subtitle" style="font-size:18px;line-height:1.65;font-weight:600;">从临床出发，向音乐心理治疗延伸<br><span style="font-size:15px;font-weight:500;opacity:.85;">在音乐治疗临床基础之上，深化心理治疗专业能力的专修方向</span></p>
   <div class="why-grid">
     <div class="why-card">
       <div class="why-icon-row"><div class="why-icon">🎵</div><div class="why-keyword">专业性</div></div>
-      <h3>临床能力 + 心理治疗专业性</h3>
-      <p>临床音乐治疗作为基础必修，在此之上深化音乐心理治疗专业。在一个课程中同时具备两种专业能力。</p>
+      <div class="why-only-badge">★ 本方向独有特色</div>
+      <h3>临床能力 + 心理治疗 + <span class="why-highlight">教练</span>专业性</h3>
+      <p>以BMGIM临床音乐治疗为基础，融合音乐心理治疗，以及<strong class="why-unique">仅在本专业方向才能学习的BMGIM Level 1、音乐心理教练方法</strong>——三种专业能力，一个课程完成。</p>
     </div>
     <div class="why-card">
       <div class="why-icon-row"><div class="why-icon">📋</div><div class="why-keyword">资格</div></div>
       <h3>多种资格，一个课程</h3>
-      <p>音乐心理咨询师·音乐康复师·发展康复师等多种资格可同时备考，课程体系专为此设计。</p>
+      <p>以音乐心理咨询师·音乐康复师为基础，兼顾音乐治疗进阶技法的衔接及临床所需的附加资格证，课程体系专为多证同步备考而设计。</p>
     </div>
     <div class="why-card">
       <div class="why-icon-row"><div class="why-icon">🏛️</div><div class="why-keyword">实习</div></div>
@@ -760,66 +792,72 @@ section > .subtitle { text-align: center !important; }
 <!-- CERTS -->
 <section id="certs">
   <div class="section-tag">CERTIFICATIONS</div>
-  <h2>音乐心理治疗方向可取得及备考的资格证书</h2>
-  <p class="subtitle">通过一个硕士课程，可同时备考多项资格证书。</p>
+  <h2>音乐心理治疗方向课程中可取得及准备的资格证</h2>
+  <p class="subtitle">一个硕士课程，可同时准备多种资格证。</p>
 
   <div class="cert-group-section">
-    <div class="cert-group-label">主要资格证书</div>
-    <div class="cert-scroll-row" style="grid-template-columns:repeat(2,1fr);">
-      <div class="cert-card">
+    <div class="cert-group-label">核心资格</div>
+    <div class="cert-scroll-row" style="grid-template-columns:repeat(1,1fr);">
+      <div class="cert-card" style="border-left:4px solid var(--blue-dk);">
         <h3>音乐心理咨询师</h3>
-        <p>整体课程体系专为取得该民间资格证书而设计</p>
+        <p>贯通临床与心理的核心资格，覆盖音乐治疗全领域的对象与机构</p>
         <div class="cert-badge badge-private">民间资格</div>
-      </div>
-      <div class="cert-card">
-        <h3>音乐康复师</h3>
-        <p>修读包含指定6门课程的21学分后满足认证条件</p>
-        <div class="cert-badge badge-national">国家认证</div>
       </div>
     </div>
   </div>
 
   <div class="cert-group-section">
-    <div class="cert-group-label" style="border-left-color:var(--teal);color:var(--teal);">关联资格证书</div>
+    <div class="cert-group-label" style="border-left-color:var(--teal);color:var(--teal);">学会·协会额外认证</div>
+    <div class="cert-scroll-row" style="grid-template-columns:repeat(2,1fr);">
+      <div class="cert-card">
+        <h3>临床音乐专家</h3>
+        <p>通过(社)韩国音乐治疗民间资格考试取得 — 学会公认，进一步认证专业能力</p>
+        <div class="cert-badge badge-private">民间资格</div>
+      </div>
+      <div class="cert-card">
+        <h3>音乐中介专家</h3>
+        <p>通过(社)全国音乐治疗师民间资格考试取得 — 协会公认，进一步认证专业能力</p>
+        <div class="cert-badge badge-private">民间资格</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-group-section">
+    <div class="cert-group-label" style="border-left-color:#8899aa;color:#556677;">可联动准备的资格证</div>
     <div class="cert-scroll-row" style="grid-template-columns:repeat(3,1fr);">
       <div class="cert-card">
-        <h3>BMGIM Level 1 结业</h3>
-        <p>取得 Bonny Method 国际资格证书的基础阶段修读</p>
+        <h3>音乐康复师</h3>
+        <p>无需额外考试，可直接申请的资格证</p>
+        <div class="cert-badge badge-national">国家认证</div>
+      </div>
+      <div class="cert-card">
+        <h3>BMGIM Level 1修了</h3>
+        <p>修完Bonny Method国际资格证取得的基础阶段</p>
         <div class="cert-badge badge-intl">国际资格</div>
       </div>
       <div class="cert-card">
-        <h3>KAC 教练</h3>
-        <p>通过"音乐心理咨询教练"课程与 KAC 资格相关联</p>
-        <div class="cert-badge badge-assoc">韩国教练协会(KCA)认证</div>
+        <h3>KAC教练</h3>
+        <p>通过音乐心理咨询教练课程与韩国教练协会(KCA)资格联动</p>
+        <div class="cert-badge badge-assoc">KCA认证</div>
+      </div>
+      <div class="cert-card">
+        <h3>青少年咨询师</h3>
+        <p>通过完成咨询心理学、心理测验、发展心理学等4门课程可备考</p>
+        <div class="cert-badge badge-national">国家资格</div>
+      </div>
+      <div class="cert-card">
+        <h3>临床心理师</h3>
+        <p>通过完成心理咨询及临床相关课程可备考</p>
+        <div class="cert-badge badge-national">国家资格</div>
       </div>
       <div class="cert-card">
         <h3>认知学习咨询师</h3>
-        <p>修读"障碍儿童的理解"课程后可关联取得资格</p>
+        <p>完成障碍儿童理解·异常心理学课程后可联动取得</p>
         <div class="cert-badge badge-private">民间资格</div>
       </div>
     </div>
   </div>
 
-  <div class="cert-group-section">
-    <div class="cert-group-label" style="border-left-color:#8899aa;color:#556677;">可额外备考的资格证书</div>
-    <div class="cert-scroll-row" style="grid-template-columns:repeat(2,1fr);">
-      <div class="cert-card">
-        <h3>临床心理师</h3>
-        <p>通过修读心理咨询及临床相关课程可备考的资格证书</p>
-        <div class="cert-badge badge-national">国家资格</div>
-      </div>
-      <div class="cert-card">
-        <h3>青少年咨询师</h3>
-        <p>通过修读发展心理学、心理咨询等相关课程可备考</p>
-        <div class="cert-badge badge-national">国家资格</div>
-      </div>
-      <div class="cert-card">
-        <h3>临床音乐专家 · 音乐中介专家</h3>
-        <p>可通过(社)韩国音乐治疗学会 · (社)全国音乐治疗师协会资格考试取得</p>
-        <div class="cert-badge badge-private">民间资格</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <div class="divider"></div>
@@ -1330,7 +1368,7 @@ section > .subtitle { text-align: center !important; }
   <strong>音乐治疗学系 · 音乐心理治疗方向</strong><br>
   <span style="font-size:11px;margin-top:4px;display:block;">硕士课程体系介绍页面 · 详情请联系学系办公室。</span>
   <span style="font-size:11px;margin-top:6px;display:block;color:rgba(255,255,255,0.75);">
-    ☎ 02-300-0795, 0984 &nbsp;|&nbsp; ✉ <a href="mailto:mptlab@naver.com" style="color:rgba(255,255,255,0.85);text-decoration:none;">mptlab@naver.com</a> &nbsp;|&nbsp; <a href="mailto:mei503@mju.ac.kr" style="color:rgba(255,255,255,0.85);text-decoration:none;">mei503@mju.ac.kr</a>
+    ☎ 02-300-0984 &nbsp;|&nbsp; ✉ <a href="mailto:mjmpt@mju.ac.kr" style="color:rgba(255,255,255,0.85);text-decoration:none;">mjmpt@mju.ac.kr</a> &nbsp;|&nbsp; <a href="mailto:mptlab@naver.com" style="color:rgba(255,255,255,0.85);text-decoration:none;">mptlab@naver.com</a>
   </span>
   <span style="display:flex;justify-content:center;gap:14px;margin-top:16px;">
     <!-- 네이버 카페 -->
@@ -1344,25 +1382,45 @@ section > .subtitle { text-align: center !important; }
       </svg>
       Naver Cafe
     </a>
-    <!-- 인스타그램 -->
-    <a href="https://www.instagram.com/meimay503/" target="_blank" rel="noopener" title="Instagram"
+    <!-- 인스타그램 트랙 공식 -->
+    <a href="https://www.instagram.com/mptlab.2026/" target="_blank" rel="noopener" title="专业方向官方Instagram"
       style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,255,255,0.22);border-radius:30px;padding:7px 16px;transition:all .25s;color:#fff;font-size:12px;font-weight:bold;"
       onmouseover="this.style.background='rgba(225,48,108,0.25)';this.style.borderColor='rgba(225,48,108,0.7)';"
       onmouseout="this.style.background='rgba(255,255,255,0.10)';this.style.borderColor='rgba(255,255,255,0.22)';">
       <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="igGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+          <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:#f9a825"/>
             <stop offset="40%" style="stop-color:#e1306c"/>
             <stop offset="100%" style="stop-color:#833ab4"/>
           </linearGradient>
         </defs>
-        <rect width="24" height="24" rx="6" fill="url(#igGrad2)"/>
+        <rect width="24" height="24" rx="6" fill="url(#igGrad)"/>
         <rect x="6" y="6" width="12" height="12" rx="3.5" stroke="#fff" stroke-width="1.6" fill="none"/>
         <circle cx="12" cy="12" r="3" stroke="#fff" stroke-width="1.6" fill="none"/>
         <circle cx="16.2" cy="7.8" r="0.9" fill="#fff"/>
       </svg>
-      Instagram
+      官方 Instagram
+    </a>
+    <!-- 인스타그램 담당 교수 -->
+    <a href="https://www.instagram.com/meimay503/" target="_blank" rel="noopener" title="담당 教授 Instagram그램"
+      style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,255,255,0.22);border-radius:30px;padding:7px 16px;transition:all .25s;color:#fff;font-size:12px;font-weight:bold;"
+      onmouseover="this.style.background='rgba(225,48,108,0.25)';this.style.borderColor='rgba(225,48,108,0.7)';"
+      onmouseout="this.style.background='rgba(255,255,255,0.10)';this.style.borderColor='rgba(255,255,255,0.22)';">
+      <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#f9a825"/>
+            <stop offset="40%" style="stop-color:#e1306c"/>
+            <stop offset="100%" style="stop-color:#833ab4"/>
+          </linearGradient>
+        </defs>
+        <rect width="24" height="24" rx="6" fill="url(#igGrad)"/>
+        <rect x="6" y="6" width="12" height="12" rx="3.5" stroke="#fff" stroke-width="1.6" fill="none"/>
+        <circle cx="12" cy="12" r="3" stroke="#fff" stroke-width="1.6" fill="none"/>
+        <circle cx="16.2" cy="7.8" r="0.9" fill="#fff"/>
+      </svg>
+      教授 Instagram
     </a>
   </span>
 </footer>
